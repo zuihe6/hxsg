@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <base target="main">
+    <title>咕叽三国</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <!-- saved from url=(0014)about:internet -->
+    <script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="js/httpurl.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+
+    <script type="text/javascript">
+        $(function () {
+            $("#login").click(function () {
+                var name = $("#name").val();
+                var pas = $("#password").val();
+
+                if (name == "" || pas == "") {
+                    $("#xinxi").html("用户名或密码不能为空");
+                } else {
+                    $.ajax({
+                        type: 'GET',
+                        url: "" + httpurl + "zhuce/applogin",
+                        dataType: 'jsonp',
+                        data: {name: name, password: pas},
+                        jsonp: "jsonpCallback",
+                        success: function (msg) {
+                            if (msg.msg == "error") {
+                                $("#xinxi").text("账号或者用户名错误，请重新输入！");
+                            }
+                            if (msg.msg == " 直接登录") {
+                                window.top.location.href = "index/index.html";
+                            }
+                            if (msg.msg == " 创建角色") {
+                                window.top.location.href = "login/createrole.html";
+                            }
+                        }
+                    });
+                }
+            });
+
+            $("#createrole").click(function () {
+                window.top.location.href = "login/zhuce.html";
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        .index {
+            background: url("image/zcback.png");
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+
+<body class="index">
+<div style="width:100%;height:100%;background:url(image/th11.gif);">
+    <div style="width:100%;height:100%;background:url(image/th.jpg);">
+        <div style="border:1px solid #ff0000; height:300px;width:300px;margin:0px auto;margin-top:100px;">
+            <p style="color:#ffffff;">账 号：<input id="name" type="text" name="name" placeHolder="请输入您的账号"/></p>
+            <p style="color:#ffffff;">密 码：<input id="password" type="password" name="password"
+                                                   placeHolder="请输入您的密码"/></p>
+            <p style="color:#FFF39C" id="xinxi"></p>
+            <input id="createrole" type="button" value="注册游戏"
+                   style="width:100px;font-size:20px;background:#ff2821;color:#7fffc5;position:relative;top:50px;left:0px;"/>
+            <input id="login" type="submit" value="进入游戏"
+                   style="width:100px;font-size:20px;background:#7b66ff;color:#7fffc5;position:relative;top:50px;left:100px;"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -13204,3 +13204,304 @@ Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 6 out of bounds for l
 2025-05-24 02:33:27.168  INFO 13348 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-05-24 02:33:27.169  INFO 13348 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-05-24 02:33:27.171  INFO 13348 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-24 16:06:08.729  INFO 9728 --- [main] com.hxsg.core.HxsgCoreApplication        : Starting HxsgCoreApplication using Java 11.0.21 on WIN-GNIGQI55DQT with PID 9728 (E:\project\new\hxsg\hxsg-core\target\classes started by Administrator in E:\project\new\hxsg)
+2025-05-24 16:06:08.777  INFO 9728 --- [main] com.hxsg.core.HxsgCoreApplication        : No active profile set, falling back to 1 default profile: "default"
+2025-05-24 16:06:10.174  INFO 9728 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 16:06:10.175  INFO 9728 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-24 16:06:10.208  INFO 9728 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2025-05-24 16:06:10.755  INFO 9728 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 16:06:10.756  INFO 9728 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-24 16:06:10.811  INFO 9728 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 0 JDBC repository interfaces.
+2025-05-24 16:06:10.861  INFO 9728 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 16:06:10.865  INFO 9728 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-24 16:06:10.903  INFO 9728 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2025-05-24 16:06:12.198  INFO 9728 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-24 16:06:12.226  INFO 9728 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-24 16:06:12.227  INFO 9728 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2025-05-24 16:06:12.471  INFO 9728 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-24 16:06:12.472  INFO 9728 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3569 ms
+2025-05-24 16:06:12.605  INFO 9728 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2025-05-24 16:06:14.168  INFO 9728 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-05-24 16:06:14.459  INFO 9728 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-24 16:06:14.716  INFO 9728 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-05-24 16:06:15.294  INFO 9728 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-24 16:06:15.646  INFO 9728 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-05-24 16:06:16.392  INFO 9728 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-24 16:06:16.428  INFO 9728 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-24 16:06:18.586  WARN 9728 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-24 16:06:19.656  INFO 9728 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-05-24 16:06:19.682  INFO 9728 --- [main] com.hxsg.core.HxsgCoreApplication        : Started HxsgCoreApplication in 12.261 seconds (JVM running for 16.035)
+2025-05-24 16:07:12.532  INFO 13112 --- [main] com.hxsg.web.HxsgWebApplication          : Starting HxsgWebApplication using Java 11.0.21 on WIN-GNIGQI55DQT with PID 13112 (E:\project\new\hxsg\hxsg-web\target\classes started by Administrator in E:\project\new\hxsg)
+2025-05-24 16:07:12.538  INFO 13112 --- [main] com.hxsg.web.HxsgWebApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-05-24 16:07:14.235  INFO 13112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 16:07:14.236  INFO 13112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-24 16:07:14.270  INFO 13112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+2025-05-24 16:07:14.839  INFO 13112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 16:07:14.840  INFO 13112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-24 16:07:14.914  INFO 13112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 0 JDBC repository interfaces.
+2025-05-24 16:07:14.947  INFO 13112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 16:07:14.950  INFO 13112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-24 16:07:15.024  INFO 13112 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 0 Redis repository interfaces.
+2025-05-24 16:07:16.570  INFO 13112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2025-05-24 16:07:16.591  INFO 13112 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-24 16:07:16.592  INFO 13112 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2025-05-24 16:07:16.843  INFO 13112 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-24 16:07:16.844  INFO 13112 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4175 ms
+2025-05-24 16:07:16.961  INFO 13112 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2025-05-24 16:07:17.954  INFO 13112 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-05-24 16:07:18.122  INFO 13112 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-24 16:07:18.208  INFO 13112 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-05-24 16:07:18.492  INFO 13112 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-24 16:07:18.728  INFO 13112 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-05-24 16:07:19.111  INFO 13112 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-24 16:07:19.137  INFO 13112 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-24 16:07:21.949  INFO 13112 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.hxsg.core.Dao.RoleMapper com.hxsg.web.battle.controller.SetRoleMoney.rm
+2025-05-24 16:07:22.171  WARN 13112 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-24 16:07:23.238  INFO 13112 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-24 16:07:23.255  INFO 13112 --- [main] com.hxsg.web.HxsgWebApplication          : Started HxsgWebApplication in 11.918 seconds (JVM running for 15.587)
+2025-05-24 16:12:53.503  INFO 13112 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-24 16:12:53.504  INFO 13112 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-24 16:12:53.506  INFO 13112 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-24 16:18:02.595  INFO 5904 --- [main] com.hxsg.web.HxsgWebApplication          : Starting HxsgWebApplication using Java 11.0.21 on WIN-GNIGQI55DQT with PID 5904 (E:\project\new\hxsg\hxsg-web\target\classes started by Administrator in E:\project\new\hxsg)
+2025-05-24 16:18:02.602  INFO 5904 --- [main] com.hxsg.web.HxsgWebApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-05-24 16:18:05.184  INFO 5904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 16:18:05.185  INFO 5904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-24 16:18:05.233  INFO 5904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces.
+2025-05-24 16:18:05.829  INFO 5904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 16:18:05.830  INFO 5904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-24 16:18:05.931  INFO 5904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 0 JDBC repository interfaces.
+2025-05-24 16:18:05.975  INFO 5904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 16:18:05.978  INFO 5904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-24 16:18:06.055  INFO 5904 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 0 Redis repository interfaces.
+2025-05-24 16:18:07.864  INFO 5904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2025-05-24 16:18:07.894  INFO 5904 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-24 16:18:07.895  INFO 5904 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2025-05-24 16:18:08.304  INFO 5904 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-24 16:18:08.305  INFO 5904 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5565 ms
+2025-05-24 16:18:08.409  INFO 5904 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2025-05-24 16:18:09.751  INFO 5904 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-05-24 16:18:09.982  INFO 5904 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-24 16:18:10.156  INFO 5904 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-05-24 16:18:10.563  INFO 5904 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-24 16:18:10.867  INFO 5904 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-05-24 16:18:11.511  INFO 5904 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-24 16:18:11.539  INFO 5904 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-24 16:18:14.104  INFO 5904 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.hxsg.core.Dao.RoleMapper com.hxsg.web.battle.controller.SetRoleMoney.rm
+2025-05-24 16:18:14.326  WARN 5904 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-24 16:18:15.641  INFO 5904 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-24 16:18:15.698  INFO 5904 --- [main] com.hxsg.web.HxsgWebApplication          : Started HxsgWebApplication in 14.226 seconds (JVM running for 17.928)
+2025-05-24 16:18:20.543  INFO 5904 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-24 16:18:20.544  INFO 5904 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-24 16:18:20.550  INFO 5904 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2025-05-24 19:01:56.062  INFO 7404 --- [main] com.hxsg.web.HxsgWebApplication          : Starting HxsgWebApplication using Java 11.0.21 on WIN-GNIGQI55DQT with PID 7404 (E:\project\new\hxsg\hxsg-web\target\classes started by Administrator in E:\project\new\hxsg)
+2025-05-24 19:01:56.075  INFO 7404 --- [main] com.hxsg.web.HxsgWebApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-05-24 19:01:58.378  INFO 7404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:01:58.379  INFO 7404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-24 19:01:58.428  INFO 7404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2025-05-24 19:01:59.166  INFO 7404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:01:59.167  INFO 7404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-24 19:01:59.234  INFO 7404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 0 JDBC repository interfaces.
+2025-05-24 19:01:59.304  INFO 7404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:01:59.307  INFO 7404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-24 19:01:59.353  INFO 7404 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2025-05-24 19:02:01.080  INFO 7404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2025-05-24 19:02:01.099  INFO 7404 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-24 19:02:01.099  INFO 7404 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2025-05-24 19:02:01.761  INFO 7404 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-05-24 19:02:01.779  INFO 7404 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-24 19:02:01.780  INFO 7404 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5483 ms
+2025-05-24 19:02:02.015  INFO 7404 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2025-05-24 19:02:03.712  INFO 7404 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-05-24 19:02:04.080  INFO 7404 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-24 19:02:04.219  INFO 7404 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-05-24 19:02:04.742  INFO 7404 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-24 19:02:05.048  INFO 7404 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-05-24 19:02:05.705  INFO 7404 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-24 19:02:05.740  INFO 7404 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-24 19:02:08.329  INFO 7404 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.hxsg.core.Dao.RoleMapper com.hxsg.web.battle.controller.SetRoleMoney.rm
+2025-05-24 19:02:08.553  WARN 7404 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-24 19:02:09.791  INFO 7404 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-24 19:02:09.811  INFO 7404 --- [main] com.hxsg.web.HxsgWebApplication          : Started HxsgWebApplication in 15.604 seconds (JVM running for 23.236)
+2025-05-24 19:02:51.192  INFO 7404 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-24 19:02:51.193  INFO 7404 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-24 19:02:51.196  INFO 7404 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-24 19:17:11.608  INFO 8480 --- [main] com.hxsg.web.HxsgWebApplication          : Starting HxsgWebApplication using Java 11.0.21 on WIN-GNIGQI55DQT with PID 8480 (E:\project\new\hxsg\hxsg-web\target\classes started by Administrator in E:\project\new\hxsg)
+2025-05-24 19:17:11.622  INFO 8480 --- [main] com.hxsg.web.HxsgWebApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-05-24 19:17:13.602  INFO 8480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:17:13.602  INFO 8480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-24 19:17:13.640  INFO 8480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2025-05-24 19:17:14.287  INFO 8480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:17:14.288  INFO 8480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-24 19:17:14.481  INFO 8480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 190 ms. Found 0 JDBC repository interfaces.
+2025-05-24 19:17:14.527  INFO 8480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:17:14.532  INFO 8480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-24 19:17:14.614  INFO 8480 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 0 Redis repository interfaces.
+2025-05-24 19:17:16.992  INFO 8480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2025-05-24 19:17:17.026  INFO 8480 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-24 19:17:17.029  INFO 8480 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2025-05-24 19:17:17.882  INFO 8480 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-05-24 19:17:17.894  INFO 8480 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-24 19:17:17.895  INFO 8480 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6096 ms
+2025-05-24 19:17:18.076  INFO 8480 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2025-05-24 19:17:19.428  INFO 8480 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-05-24 19:17:19.737  INFO 8480 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-24 19:17:19.890  INFO 8480 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-05-24 19:17:20.337  INFO 8480 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-24 19:17:20.668  INFO 8480 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-05-24 19:17:21.319  INFO 8480 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-24 19:17:21.354  INFO 8480 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-24 19:17:23.825  INFO 8480 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.hxsg.core.Dao.RoleMapper com.hxsg.web.battle.controller.SetRoleMoney.rm
+2025-05-24 19:17:24.096  WARN 8480 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-24 19:17:25.264  INFO 8480 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-24 19:17:25.282  INFO 8480 --- [main] com.hxsg.web.HxsgWebApplication          : Started HxsgWebApplication in 15.294 seconds (JVM running for 19.209)
+2025-05-24 19:17:33.870  INFO 8480 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-24 19:17:33.871  INFO 8480 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-24 19:17:33.875  INFO 8480 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-05-24 19:18:55.600  INFO 10988 --- [main] com.hxsg.web.HxsgWebApplication          : Starting HxsgWebApplication using Java 11.0.21 on WIN-GNIGQI55DQT with PID 10988 (E:\project\new\hxsg\hxsg-web\target\classes started by Administrator in E:\project\new\hxsg)
+2025-05-24 19:18:55.609  INFO 10988 --- [main] com.hxsg.web.HxsgWebApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-05-24 19:18:57.714  INFO 10988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:18:57.715  INFO 10988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-24 19:18:57.742  INFO 10988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
+2025-05-24 19:18:58.125  INFO 10988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:18:58.125  INFO 10988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-24 19:18:58.202  INFO 10988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 0 JDBC repository interfaces.
+2025-05-24 19:18:58.234  INFO 10988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:18:58.242  INFO 10988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-24 19:18:58.501  INFO 10988 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 143 ms. Found 0 Redis repository interfaces.
+2025-05-24 19:19:01.123  INFO 10988 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2025-05-24 19:19:01.153  INFO 10988 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-24 19:19:01.155  INFO 10988 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2025-05-24 19:19:01.808  INFO 10988 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-05-24 19:19:01.817  INFO 10988 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-24 19:19:01.818  INFO 10988 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5993 ms
+2025-05-24 19:19:01.975  INFO 10988 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2025-05-24 19:19:03.532  INFO 10988 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-05-24 19:19:03.800  INFO 10988 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-24 19:19:03.903  INFO 10988 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-05-24 19:19:04.277  INFO 10988 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-24 19:19:04.568  INFO 10988 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-05-24 19:19:05.592  INFO 10988 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-24 19:19:05.616  INFO 10988 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-24 19:19:08.033  INFO 10988 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.hxsg.core.Dao.RoleMapper com.hxsg.web.battle.controller.SetRoleMoney.rm
+2025-05-24 19:19:08.293  WARN 10988 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-24 19:19:09.169  INFO 10988 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-24 19:19:09.186  INFO 10988 --- [main] com.hxsg.web.HxsgWebApplication          : Started HxsgWebApplication in 15.122 seconds (JVM running for 19.064)
+2025-05-24 19:19:13.176  INFO 10988 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-24 19:19:13.177  INFO 10988 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-24 19:19:13.179  INFO 10988 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-24 19:22:52.497  INFO 12176 --- [main] com.hxsg.web.HxsgWebApplication          : Starting HxsgWebApplication using Java 11.0.21 on WIN-GNIGQI55DQT with PID 12176 (E:\project\new\hxsg\hxsg-web\target\classes started by Administrator in E:\project\new\hxsg)
+2025-05-24 19:22:52.509  INFO 12176 --- [main] com.hxsg.web.HxsgWebApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-05-24 19:22:54.254  INFO 12176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:22:54.254  INFO 12176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-24 19:22:54.293  INFO 12176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JPA repository interfaces.
+2025-05-24 19:22:54.783  INFO 12176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:22:54.785  INFO 12176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-24 19:22:54.865  INFO 12176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 0 JDBC repository interfaces.
+2025-05-24 19:22:54.906  INFO 12176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:22:54.909  INFO 12176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-24 19:22:54.984  INFO 12176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 0 Redis repository interfaces.
+2025-05-24 19:22:56.598  INFO 12176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2025-05-24 19:22:56.620  INFO 12176 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-24 19:22:56.620  INFO 12176 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2025-05-24 19:22:57.312  INFO 12176 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-05-24 19:22:57.324  INFO 12176 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-24 19:22:57.324  INFO 12176 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4723 ms
+2025-05-24 19:22:57.473  INFO 12176 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2025-05-24 19:22:58.796  INFO 12176 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-05-24 19:22:59.271  INFO 12176 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-24 19:22:59.402  INFO 12176 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-05-24 19:22:59.852  INFO 12176 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-24 19:23:00.269  INFO 12176 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-05-24 19:23:01.104  INFO 12176 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-24 19:23:01.146  INFO 12176 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-24 19:23:03.926  INFO 12176 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.hxsg.core.Dao.RoleMapper com.hxsg.web.battle.controller.SetRoleMoney.rm
+2025-05-24 19:23:04.283  WARN 12176 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-24 19:23:05.479  INFO 12176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-24 19:23:05.496  INFO 12176 --- [main] com.hxsg.web.HxsgWebApplication          : Started HxsgWebApplication in 15.282 seconds (JVM running for 19.787)
+2025-05-24 19:23:08.781  INFO 12176 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-24 19:23:08.783  INFO 12176 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-24 19:23:08.788  INFO 12176 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-05-24 19:27:03.302  INFO 12176 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-24 19:27:03.315  INFO 12176 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2025-05-24 19:27:03.363  INFO 12176 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2025-05-24 19:27:16.635  INFO 8788 --- [main] com.hxsg.web.HxsgWebApplication          : Starting HxsgWebApplication using Java 11.0.21 on WIN-GNIGQI55DQT with PID 8788 (E:\project\new\hxsg\hxsg-web\target\classes started by Administrator in E:\project\new\hxsg)
+2025-05-24 19:27:16.646  INFO 8788 --- [main] com.hxsg.web.HxsgWebApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-05-24 19:27:18.243  INFO 8788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:27:18.243  INFO 8788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-24 19:27:18.272  INFO 8788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2025-05-24 19:27:18.688  INFO 8788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:27:18.689  INFO 8788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-24 19:27:18.762  INFO 8788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 0 JDBC repository interfaces.
+2025-05-24 19:27:18.796  INFO 8788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:27:18.799  INFO 8788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-24 19:27:18.862  INFO 8788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 0 Redis repository interfaces.
+2025-05-24 19:27:20.354  INFO 8788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 63342 (http)
+2025-05-24 19:27:20.379  INFO 8788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-24 19:27:20.380  INFO 8788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2025-05-24 19:27:20.975  INFO 8788 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-05-24 19:27:20.987  INFO 8788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-24 19:27:20.988  INFO 8788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4202 ms
+2025-05-24 19:27:21.128  INFO 8788 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2025-05-24 19:27:21.952  INFO 8788 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-05-24 19:27:22.145  INFO 8788 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-24 19:27:22.227  INFO 8788 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-05-24 19:27:22.473  INFO 8788 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-24 19:27:22.663  INFO 8788 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-05-24 19:27:23.045  INFO 8788 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-24 19:27:23.061  INFO 8788 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-24 19:27:25.095  INFO 8788 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.hxsg.core.Dao.RoleMapper com.hxsg.web.battle.controller.SetRoleMoney.rm
+2025-05-24 19:27:25.373  WARN 8788 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-24 19:27:28.262  WARN 8788 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 63342 is already in use
+2025-05-24 19:27:28.290  INFO 8788 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-24 19:27:28.294  INFO 8788 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2025-05-24 19:27:28.303  INFO 8788 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2025-05-24 19:27:28.305  INFO 8788 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-05-24 19:27:28.331  INFO 8788 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2025-05-24 19:27:28.393 ERROR 8788 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 63342 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 63342 or configure this application to listen on another port.
+
+2025-05-24 19:29:20.837  INFO 7284 --- [main] com.hxsg.web.HxsgWebApplication          : Starting HxsgWebApplication using Java 11.0.21 on WIN-GNIGQI55DQT with PID 7284 (E:\project\new\hxsg\hxsg-web\target\classes started by Administrator in E:\project\new\hxsg)
+2025-05-24 19:29:20.846  INFO 7284 --- [main] com.hxsg.web.HxsgWebApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-05-24 19:29:22.655  INFO 7284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:29:22.656  INFO 7284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-24 19:29:22.684  INFO 7284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2025-05-24 19:29:23.082  INFO 7284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:29:23.083  INFO 7284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-24 19:29:23.152  INFO 7284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 0 JDBC repository interfaces.
+2025-05-24 19:29:23.181  INFO 7284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-24 19:29:23.184  INFO 7284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-05-24 19:29:23.246  INFO 7284 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 0 Redis repository interfaces.
+2025-05-24 19:29:24.612  INFO 7284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2025-05-24 19:29:24.638  INFO 7284 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-24 19:29:24.638  INFO 7284 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2025-05-24 19:29:25.184  INFO 7284 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-05-24 19:29:25.195  INFO 7284 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-24 19:29:25.195  INFO 7284 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4148 ms
+2025-05-24 19:29:25.323  INFO 7284 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2025-05-24 19:29:26.355  INFO 7284 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2025-05-24 19:29:26.585  INFO 7284 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-24 19:29:26.686  INFO 7284 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2025-05-24 19:29:26.984  INFO 7284 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-05-24 19:29:27.154  INFO 7284 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-05-24 19:29:27.486  INFO 7284 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-24 19:29:27.505  INFO 7284 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-24 19:29:28.935  INFO 7284 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static com.hxsg.core.Dao.RoleMapper com.hxsg.web.battle.controller.SetRoleMoney.rm
+2025-05-24 19:29:29.099  WARN 7284 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-24 19:29:30.147  INFO 7284 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2025-05-24 19:29:30.173  INFO 7284 --- [main] com.hxsg.web.HxsgWebApplication          : Started HxsgWebApplication in 10.487 seconds (JVM running for 13.516)
+2025-05-24 19:29:36.060  INFO 7284 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-24 19:29:36.061  INFO 7284 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-24 19:29:36.065  INFO 7284 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
