@@ -6,7 +6,7 @@
 
     <!-- 继承父POM -->
     <parent>
-        <groupId>com.example</groupId>
+        <groupId>com.hxsg</groupId>
         <artifactId>hxsg</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -31,7 +31,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.example</groupId>
+            <groupId>com.hxsg</groupId>
             <artifactId>hxsg-core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
 <!--            &lt;!&ndash; 若为普通JAR（非Spring Boot模块），需排除冲突的依赖 &ndash;&gt;-->

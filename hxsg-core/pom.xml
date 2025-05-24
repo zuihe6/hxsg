@@ -6,7 +6,7 @@
 
     <!-- 继承父POM -->
     <parent>
-        <groupId>com.example</groupId>
+        <groupId>com.hxsg</groupId>
         <artifactId>hxsg</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
