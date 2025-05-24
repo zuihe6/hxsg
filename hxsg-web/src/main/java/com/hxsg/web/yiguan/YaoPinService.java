@@ -1,0 +1,13 @@
+package com.hxsg.web.yiguan;
+
+import com.hxsg.core.po.yaoping;
+
+import java.util.List;
+
+/**
+ * Created by dlf on 2016/1/1.
+ */
+public interface YaoPinService {
+    List<yaoping> selectBySx(Integer sx);
+
+}
