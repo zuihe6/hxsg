@@ -1,4 +1,4 @@
-﻿var httpurl = "http://127.0.0.1:8081/hxsg-web/";
+﻿var httpurl = "http://127.0.0.1:8081/";
 
 function onPageLoad() {
     dwr.engine.setActiveReverseAjax(true);

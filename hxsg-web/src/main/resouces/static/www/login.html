@@ -26,6 +26,7 @@
                 if (name == "" || pas == "") {
                     $("#xinxi").html("用户名或密码不能为空");
                 } else {
+                    console.log("" + httpurl + "zhuce/applogin", "Aaaaaaaa")
                     $.ajax({
                         type: 'GET',
                         url: "" + httpurl + "zhuce/applogin",
