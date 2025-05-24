@@ -1,6 +1,10 @@
 package hxsg.qianzhuang.controller;
 
 import com.hxsg.CommonUtil.CommonUtilAjax;
+import com.hxsg.po.GoldBusiness;
+import com.hxsg.po.GoldRecord;
+import com.hxsg.po.MoneyRecord;
+import com.hxsg.po.NewRole;
 import com.hxsg.qianzhuang.service.MoneyService;
 import hxsg.CommonUtil.controller.RoleMoney;
 import java.util.List;
@@ -59,6 +63,7 @@ public class Cocos2dMoneyController {
             md.setRoleid(roleId);
           List<MoneyRecord> re=moneyservice.querymoneyRecord(md);
             CommonUtilAjax.sendAjaxList("result",re,request,response);
+            System.out.println("xxx");
         } catch (Exception e) {
             e.printStackTrace();
             logger.error("钱庄获取银两控制层异常："+e.getMessage());
