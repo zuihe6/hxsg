@@ -1,6 +1,7 @@
 package com.hxsg.pk.vo;
 
-import com.hxsg.po.Skill;
+
+import com.hxsg.core.po.Skill;
 
 import java.io.Serializable;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
  * Created by dlf on 2016/10/31.
  * 副将界面详情加载VO
  */
-public class FuJiangDetailVo implements Serializable{
+public class FuJiangDetailVo implements Serializable {
     private String name;//副将:藤甲兵
     private String imgUrl;//副将图片URL地址
     private Integer id;//副将ID:10086

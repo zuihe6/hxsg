@@ -1,6 +1,7 @@
 package com.hxsg.pk.dao.impl;
 
-import com.hxsg.dao.VactoryBattle;
+
+import com.hxsg.pk.dao.VactoryBattle;
 
 /**
  * Created by Administrator on 2017/9/14 0014.

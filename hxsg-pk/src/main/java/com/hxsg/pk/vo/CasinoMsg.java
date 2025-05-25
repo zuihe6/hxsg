@@ -1,6 +1,7 @@
 package com.hxsg.pk.vo;
 
-import com.hxsg.po.YlDaXiao;
+
+import com.hxsg.core.po.YlDaXiao;
 
 import java.io.Serializable;
 

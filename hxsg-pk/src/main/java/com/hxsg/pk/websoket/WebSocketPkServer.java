@@ -8,6 +8,7 @@ import com.hxsg.core.CommonUtil.FinalMap;
 import com.hxsg.core.CommonUtil.MathUtil;
 import com.hxsg.core.Dao.*;
 import com.hxsg.core.po.*;
+import com.hxsg.core.redisService.RedisDaoService;
 import com.hxsg.core.systemdao.SystemNotification;
 import com.hxsg.pk.dao.FuJiangService;
 import com.hxsg.pk.dao.HxsgBattle;
@@ -47,10 +48,10 @@ public class WebSocketPkServer extends TextWebSocketHandler {
 
     @Autowired
     SystemNotification systemnotification;
-    @Autowired
-    RedisDaoService redisdaoservice;
-    @Autowired
-    LoadGuaiService loadguaiservice;
+//    @Autowired
+//    RedisDaoService redisdaoservice;
+//    @Autowired
+//    LoadGuaiService loadguaiservice;
     @Autowired
     RoleFujiangMapper RoleFujiangmapper;
     @Autowired

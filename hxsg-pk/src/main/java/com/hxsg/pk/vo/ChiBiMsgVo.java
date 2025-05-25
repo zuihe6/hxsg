@@ -1,6 +1,7 @@
 package com.hxsg.pk.vo;
 
-import com.hxsg.po.ChibiYazhuDetail;
+
+import com.hxsg.core.po.ChibiYazhuDetail;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
 /**
  * Created by dlf on 2017/3/9.
  */
-public class ChiBiMsgVo implements Serializable{
+public class ChiBiMsgVo implements Serializable {
     public List<ChibiYazhuDetail> cbLi;
     public String result;
     public Integer num;
