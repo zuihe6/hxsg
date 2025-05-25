@@ -15,13 +15,16 @@ public class SimpleResult extends HashMap<String, Object> {
     private static final long serialVersionUID = 1L;
     public static String SUCCESS = "000";
     public static String ERROR = "001";
+
     public static SimpleResult success() {
         return new SimpleResult(SimpleCode.SUCCESS);
     }
+
     public static SimpleResult error() {
         return new SimpleResult(SimpleCode.SUCCESS);
     }
-    public static SimpleResult error(String code,String message) {
+
+    public static SimpleResult error(String code, String message) {
         return new SimpleResult(code, message);
     }
 
@@ -41,7 +44,6 @@ public class SimpleResult extends HashMap<String, Object> {
     public static SimpleResult fromError(SimpleError e) {
         return new SimpleResult(e.getCode(), e.getMessage());
     }
-
 
 
     public void setCode(String code) {

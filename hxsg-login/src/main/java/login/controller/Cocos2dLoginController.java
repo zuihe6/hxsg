@@ -114,11 +114,11 @@ public class Cocos2dLoginController {
         return sr;
     }
 
-    //注册
+    //注册账号
     @RequestMapping(value = "/creatAccount", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public SimpleResult creatAccount(Acount re) {
-        SimpleResult sr = null;
+        SimpleResult sr = new SimpleResult();
         try {
             String result = cocos2dloginservice.creatAccount(re);
             sr = SimpleResult.success();
