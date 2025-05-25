@@ -1,9 +1,11 @@
 package com.hxsg.core.Dao;
 
 import com.hxsg.core.po.RoleNewShuXing;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+@Mapper
 public interface RoleNewShuXingMapper {
     int deleteByPrimaryKey(Integer id)throws Exception;
 

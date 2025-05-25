@@ -22,30 +22,31 @@ import javax.servlet.http.HttpSession;
 public class PkController {
     @Autowired
     PkService pkservice;
-    private Logger logger =Logger.getLogger(PkController.class);
+    private Logger logger = Logger.getLogger(PkController.class);
 
-    @RequestMapping(value = "/doubleStart", method = { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = "/doubleStart", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public String pushSystemMsg(
             @RequestParam(value = "pkId", required = true) Integer pkId,
-            HttpSession session,HttpServletRequest request,HttpServletResponse response){
-        try{
-            Integer roleId= (Integer) session.getAttribute("roleId");
-            pkservice.pushTime(1000,1002);
-        }catch (Exception e){
-          e.printStackTrace();
+            HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        try {
+            Integer roleId = (Integer) session.getAttribute("roleId");
+            pkservice.pushTime(1000, 1002);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return null;
     }
-    @RequestMapping(value = "/add", method = { RequestMethod.GET, RequestMethod.POST })
+
+    @RequestMapping(value = "/add", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public String add(
             @RequestParam(value = "pkId", required = true) Integer pkId,
-            HttpSession session,HttpServletRequest request,HttpServletResponse response){
-        try{
-            Integer roleId= (Integer) session.getAttribute("roleId");
-            PkMap.PKMAP.put(pkId,pkId);
-        }catch (Exception e){
+            HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        try {
+            Integer roleId = (Integer) session.getAttribute("roleId");
+            PkMap.PKMAP.put(pkId, pkId);
+        } catch (Exception e) {
         }
         return null;
     }

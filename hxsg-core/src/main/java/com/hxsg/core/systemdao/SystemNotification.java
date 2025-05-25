@@ -1,5 +1,7 @@
 package com.hxsg.core.systemdao;
 
+import org.apache.ibatis.annotations.Mapper;
+
 /**
  * Created by dlf on 2016/10/13.
  * 推送系统聊天中的世界消息---

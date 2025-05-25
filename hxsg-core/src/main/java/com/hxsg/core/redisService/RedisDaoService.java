@@ -1,11 +1,14 @@
 package com.hxsg.core.redisService;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import java.util.Collection;
 import java.util.Set;
 
 /**
  * Created by Administrator on 2017/5/11 0011.
  */
+
 public interface RedisDaoService {
     /**
      * 设置key

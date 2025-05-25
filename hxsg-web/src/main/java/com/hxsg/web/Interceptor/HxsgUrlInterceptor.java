@@ -14,22 +14,23 @@ import javax.servlet.http.HttpSession;
  * Created by dlf on 2016/11/8.
  */
 public class HxsgUrlInterceptor implements HandlerInterceptor {
-    protected  HttpSession session=null;
+    protected HttpSession session = null;
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
-        boolean result=false;
+        boolean result = false;
         try {
-            String key=request.getHeader("key");
-            System.out.println("-----------------"+key);
+            String key = request.getHeader("key");
+            System.out.println("-----------------" + key);
             session = request.getSession(true);
-            if(!StringUtil.isEmpty(key)){
-                Login ln= (Login) Constants.loginMap.get(key);
-                if(ln!=null){
-                    session.setAttribute("roleId",ln.getRoleId());
-                    session.setAttribute("roleName",ln.getRoleName());
-                    session.setAttribute("acount",ln.getAcount().getId());
+            if (!StringUtil.isEmpty(key)) {
+                Login ln = (Login) Constants.loginMap.get(key);
+                if (ln != null) {
+                    session.setAttribute("roleId", ln.getRoleId());
+                    session.setAttribute("roleName", ln.getRoleName());
+                    session.setAttribute("acount", ln.getAcount().getId());
                 }
-                result=true;
+                result = true;
             }
         } catch (Exception e) {
             e.printStackTrace();

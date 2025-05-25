@@ -23,31 +23,32 @@ import java.util.Map;
 @RequestMapping("qrcode")
 public class QrCodeIndexController {
     /********************cocos2d-js服务端代码***************************/
-    private Logger logger =Logger.getLogger(QrCodeIndexController.class);
+    private Logger logger = Logger.getLogger(QrCodeIndexController.class);
     @Autowired
     Cocos2dIndexService cocos2dindexservice;
+
     //获取玩家详情
-    @RequestMapping(value = "/demo", method = { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = "/demo", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
-    public String indexRoleMsg(HttpSession session,HttpServletRequest request,HttpServletResponse response){
-        try{
+    public String indexRoleMsg(HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        try {
 
-            Map<String,WebSocketSession> mp= QrCodeWebScoketController.mp;
-                for(String p:mp.keySet()){
-                    WebSocketSession ws= null;
-                    try {
-                        ws = mp.get(p);
-                        if(!session.equals(ws)){
-                            ws.sendMessage(new TextMessage("xx"));
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
+            Map<String, WebSocketSession> mp = QrCodeWebScoketController.mp;
+            for (String p : mp.keySet()) {
+                WebSocketSession ws = null;
+                try {
+                    ws = mp.get(p);
+                    if (!session.equals(ws)) {
+                        ws.sendMessage(new TextMessage("xx"));
                     }
-
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
 
-        }catch (Exception e){
             }
+
+        } catch (Exception e) {
+        }
         return null;
     }
 

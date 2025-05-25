@@ -1,7 +1,9 @@
 package com.hxsg.core.Dao;
 
 import com.hxsg.core.po.YeGuaiQun;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface YeGuaiQunMapper {
     int deleteByPrimaryKey(Integer id);
 

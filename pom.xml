@@ -21,6 +21,7 @@
         <module>hxsg-login</module>
         <module>hxsg-api</module>
         <module>hxsg-admin</module>
+        <module>hxsg-pk</module>
     </modules>
 
     <properties>

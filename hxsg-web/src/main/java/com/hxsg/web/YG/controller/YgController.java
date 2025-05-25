@@ -38,6 +38,7 @@ public class YgController {
     @Autowired
     RoleZbMapper rzm;
     private Logger logger = LoggerFactory.getLogger(getClass());
+
     @RequestMapping(value = "/login", method = {RequestMethod.GET, RequestMethod.POST})
     public String login() throws Exception {
 
@@ -60,19 +61,20 @@ public class YgController {
         return "驿馆/副将留守";
 
     }
+
     @RequestMapping(value = "/appfjls", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
-    public String appfjls(HttpSession session,HttpServletRequest request,HttpServletResponse response) throws Exception {
+    public String appfjls(HttpSession session, HttpServletRequest request, HttpServletResponse response) throws Exception {
         //跳转到留守页面，显示可以留守的副将
         Integer r = (Integer) session.getAttribute("roleid");
-        if(r>0){
+        if (r > 0) {
             int roleid = r;
             RoleFujiang rfs = new RoleFujiang();
             rfs.setRoleid(roleid);
             rfs.setShuxing(1);
             rfs.setStatus("战斗");
             List<RoleFujiang> li = rfm.getByRoleIdShuxStatus(rfs);
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjaxList("rf",li,request,response);
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjaxList("rf", li, request, response);
 
 
         }
@@ -92,15 +94,17 @@ public class YgController {
         return "redirect:fjls";
 
     }
+
     @RequestMapping(value = "/applsshuxing", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
-    public String applsshuxing(HttpServletRequest request,HttpServletResponse response,HttpSession session,@RequestParam(value = "id", required = false) Integer id) throws Exception {
+    public String applsshuxing(HttpServletRequest request, HttpServletResponse response, HttpSession session, @RequestParam(value = "id", required = false) Integer id) throws Exception {
         //执行留守操作
         Integer r = (Integer) session.getAttribute("roleid");
-        if(r>0){ RoleFujiang rfj = rfm.selectByPrimaryKey(id);
+        if (r > 0) {
+            RoleFujiang rfj = rfm.selectByPrimaryKey(id);
             rfj.setShuxing(0);
             rfm.updateByPrimaryKeySelective(rfj);
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax("",request,response);
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax("", request, response);
         }
 
         return null;
@@ -120,16 +124,17 @@ public class YgController {
         return "驿馆/副将招领";
 
     }
+
     @RequestMapping(value = "/appfjzl", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
-    public String appfjzl(HttpSession session,HttpServletRequest request,HttpServletResponse response) throws Exception {
+    public String appfjzl(HttpSession session, HttpServletRequest request, HttpServletResponse response) throws Exception {
         //跳转到招领页面，显示可以招领的副将
         Integer r = (Integer) session.getAttribute("roleid");
-        if(r>0){
+        if (r > 0) {
             int roleid = r;
             List<RoleFujiang> li = rfm.getByRoleIdShux(roleid, 0);
 
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjaxList("rf",li,request,response);
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjaxList("rf", li, request, response);
 
         }
 
@@ -141,11 +146,11 @@ public class YgController {
     @RequestMapping(value = "/appzlshuxing", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     //执行招领操作
-    public String appzlshuxing(HttpServletRequest request,@RequestParam(value = "id", required = false) Integer id, HttpSession session, Model model, HttpServletResponse response) throws Exception {
+    public String appzlshuxing(HttpServletRequest request, @RequestParam(value = "id", required = false) Integer id, HttpSession session, Model model, HttpServletResponse response) throws Exception {
 
 
         Integer r = (Integer) session.getAttribute("roleid");
-        if(r>0){
+        if (r > 0) {
             int roleid = r;
             List<RoleFujiang> li = rfm.getByRoleIdShux(roleid, 1);
             if (li.size() < 10) {
@@ -165,22 +170,21 @@ public class YgController {
                         RoleFujiang rfj = rfm.selectByPrimaryKey(id);
                         rfj.setShuxing(1);
                         rfm.updateByPrimaryKeySelective(rfj);
-                        com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjaxList("msg","招领副将成功！消费" + zlmoney + "两!",request,response);
+                        com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjaxList("msg", "招领副将成功！消费" + zlmoney + "两!", request, response);
 
 
                     }
 
                 } else {
-                    com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjaxList("msg","招领副将失败！银两不足",request,response);
+                    com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjaxList("msg", "招领副将失败！银两不足", request, response);
 
 
                 }
             } else {
-                com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjaxList("msg","您的随行副将已经有10个，无法招领。",request,response);
+                com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjaxList("msg", "您的随行副将已经有10个，无法招领。", request, response);
 
 
             }
-
 
 
         }
@@ -189,6 +193,7 @@ public class YgController {
         return null;
 
     }
+
     @RequestMapping(value = "/zlshuxing", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     //执行招领操作
@@ -252,7 +257,6 @@ public class YgController {
     }
 
 
-
     @RequestMapping(value = "/fujiang", method = {RequestMethod.GET, RequestMethod.POST})
     public String fujiang(HttpSession session, String sx, Model model) throws Exception {
         List<Role> r = (List<Role>) session.getAttribute("rolelist");//通过登录后的Session获取角色ID
@@ -264,14 +268,15 @@ public class YgController {
         return "驿馆/角色副将";
 
     }
+
     @RequestMapping(value = "/appfujiang", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
-    public String appfujiang(HttpSession session, String sx,HttpServletRequest request,HttpServletResponse response) throws Exception {
+    public String appfujiang(HttpSession session, String sx, HttpServletRequest request, HttpServletResponse response) throws Exception {
         Integer r = (Integer) session.getAttribute("roleid");
-        if(r>0){
+        if (r > 0) {
             int roleid = r;
             List<RoleFujiang> li = rfm.getByRoleIdShux(roleid, 1);
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjaxList("rf",li,request,response);
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjaxList("rf", li, request, response);
 
         }
         return null;
@@ -366,12 +371,13 @@ public class YgController {
 
 
     }
+
     @RequestMapping(value = "/appstatus", method = {RequestMethod.GET, RequestMethod.POST})
-    public String appstatus(HttpServletRequest request,HttpServletResponse response,@RequestParam(value = "id", required = false) Integer id, HttpSession session, String sx, Model model) throws Exception {
+    public String appstatus(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "id", required = false) Integer id, HttpSession session, String sx, Model model) throws Exception {
 //设置副将的战斗状态
         Integer r = (Integer) session.getAttribute("roleid");
-        if(r>0){
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax("",request,response);
+        if (r > 0) {
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax("", request, response);
             int roleid = r;
             RoleFujiang rfj = (RoleFujiang) rfm.selectByPrimaryKey(id);
             System.out.println(rfj.getShuxing());
@@ -454,36 +460,35 @@ public class YgController {
         }
 
 
-
         return null;
 
 
     }
+
     @RequestMapping(value = "/fjxx", method = {RequestMethod.GET, RequestMethod.POST})
     public String fjxx(@RequestParam(value = "id", required = false) Integer id, String sx, Model model) throws Exception {
 
         //传递副将信息
 
-        RoleFujiang rfj=(RoleFujiang) rfm.selectByPrimaryKey(id);
+        RoleFujiang rfj = (RoleFujiang) rfm.selectByPrimaryKey(id);
 
-        model.addAttribute("rfj",rfj);
+        model.addAttribute("rfj", rfj);
 
         return "副将/玩家副将";
 
     }
+
     @RequestMapping(value = "/appfjxx", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
-    public String appfjxx(HttpSession session,@RequestParam(value = "id", required = false) Integer id, String sx,HttpServletRequest request,HttpServletResponse response) throws Exception {
+    public String appfjxx(HttpSession session, @RequestParam(value = "id", required = false) Integer id, String sx, HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         //传递副将信息
         Integer r = (Integer) session.getAttribute("roleid");
-        if(r>0){
-            RoleFujiang rfj=(RoleFujiang) rfm.selectByPrimaryKey(id);
-            CommonUtilAjax.sendAjaxList("rfj",rfj,request,response);
+        if (r > 0) {
+            RoleFujiang rfj = (RoleFujiang) rfm.selectByPrimaryKey(id);
+            CommonUtilAjax.sendAjaxList("rfj", rfj, request, response);
 
         }
-
-
 
 
         return null;

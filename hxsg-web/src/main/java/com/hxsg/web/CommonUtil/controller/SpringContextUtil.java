@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContextAware;
 public class SpringContextUtil implements ApplicationContextAware {
 
     private static ApplicationContext applicationContext; //Spring应用上下文环境
+
     //下面的这个方法上加了@Override注解，原因是继承ApplicationContextAware接口是必须实现的方法
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -17,6 +18,7 @@ public class SpringContextUtil implements ApplicationContextAware {
     public static ApplicationContext getApplicationContext() {
         return applicationContext;
     }
+
     public static Object getBean(String name) throws BeansException {
         return applicationContext.getBean(name);
     }

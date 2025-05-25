@@ -26,33 +26,35 @@ public class Cocos2dFuJiangController {
     @Autowired
     Cocos2dFuJiangService cocos2dfujiangservice;
     private Logger logger = LoggerFactory.getLogger(getClass());
+
     //副将培养界面数据加载。
     @ResponseBody
-    @RequestMapping(value = "/loadChuZhiPeiYang", method = { RequestMethod.GET, RequestMethod.POST })
-    public String czpy(@RequestParam(value = "fuId",required = false)Integer fuId,
+    @RequestMapping(value = "/loadChuZhiPeiYang", method = {RequestMethod.GET, RequestMethod.POST})
+    public String czpy(@RequestParam(value = "fuId", required = false) Integer fuId,
                        HttpSession session,
-                       HttpServletRequest request,HttpServletResponse response){
-        Integer roleid=(Integer)session.getAttribute("roleId");
-        PeiYangFuJiangVo pv= null;
+                       HttpServletRequest request, HttpServletResponse response) {
+        Integer roleid = (Integer) session.getAttribute("roleId");
+        PeiYangFuJiangVo pv = null;
         try {
-            pv = cocos2dfujiangservice.loadPeiYangFuJiang(fuId,roleid);
-            CommonUtilAjax.sendAjaxList("msg",pv,request,response);
+            pv = cocos2dfujiangservice.loadPeiYangFuJiang(fuId, roleid);
+            CommonUtilAjax.sendAjaxList("msg", pv, request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
+
     //副将详情页面加载
     @ResponseBody
-    @RequestMapping(value = "/loadRoleFujiang", method = { RequestMethod.GET, RequestMethod.POST })
-    public String loadRoleFujiang(@RequestParam(value = "fuId",required = false)Integer fuId,
-                       HttpSession session,
-                       HttpServletRequest request,HttpServletResponse response){
-        Integer roleid=(Integer)session.getAttribute("roleId");
-        FuJiangDetailVo pv= null;
+    @RequestMapping(value = "/loadRoleFujiang", method = {RequestMethod.GET, RequestMethod.POST})
+    public String loadRoleFujiang(@RequestParam(value = "fuId", required = false) Integer fuId,
+                                  HttpSession session,
+                                  HttpServletRequest request, HttpServletResponse response) {
+        Integer roleid = (Integer) session.getAttribute("roleId");
+        FuJiangDetailVo pv = null;
         try {
-            pv = cocos2dfujiangservice.loadRoleFuJiang(roleid,fuId);
-            CommonUtilAjax.sendAjaxList("msg",pv,request,response);
+            pv = cocos2dfujiangservice.loadRoleFuJiang(roleid, fuId);
+            CommonUtilAjax.sendAjaxList("msg", pv, request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }

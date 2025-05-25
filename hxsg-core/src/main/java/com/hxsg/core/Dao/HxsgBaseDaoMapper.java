@@ -7,10 +7,12 @@ package com.hxsg.core.Dao;
 
 
 import com.hxsg.core.CommonUtil.CommonException;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 import java.util.Map;
 
+@Mapper
 public interface HxsgBaseDaoMapper {
     /**
      * 执行任意select

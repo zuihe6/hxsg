@@ -15,7 +15,7 @@ import java.util.Map;
 /**
  * Created by dlf on 2016/10/14.
  */
-@Service("SystemNotification")
+@Service
 public class SystemNotificationImpl implements SystemNotification {
     private Logger logger = Logger.getLogger(SystemNotificationImpl.class);
     @Autowired

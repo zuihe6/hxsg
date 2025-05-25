@@ -1,9 +1,11 @@
 package com.hxsg.core.Dao;
 
 import com.hxsg.core.po.RoleFujiang;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+@Mapper
 public interface RoleFujiangMapper {
     int deleteByPrimaryKey(Integer id);
 
