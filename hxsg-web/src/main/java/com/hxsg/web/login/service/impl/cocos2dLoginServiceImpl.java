@@ -39,6 +39,7 @@ public class cocos2dLoginServiceImpl implements cocos2dLoginService {
     RoleNewShuXingMapper rolenewshuxingmapper;
     @Autowired
     SystemNotification systemnotification;
+
     @Override
     public String checkRole(NewRole re) {
         String result = StatusNum.SUCCES;
@@ -48,43 +49,46 @@ public class cocos2dLoginServiceImpl implements cocos2dLoginService {
                 result = StatusNum.FAIL;
             }
         } catch (Exception e) {
-            result =ErrorType.SERVERERROR;
+            result = ErrorType.SERVERERROR;
             logger.error("service层--验证角色名或者账号名是否重复异常checkRole：" + e.getMessage());
         }
         return result;
     }
+
     @Override
-    public String checkAcount(Acount re)  {
-        String s= StatusNum.FAIL;
+    public String checkAcount(Acount re) {
+        String s = StatusNum.FAIL;
         try {
-            Acount at= acountmapper.checkdAcount(re);
-            if(at==null){
-                s=StatusNum.SUCCES;
+            Acount at = acountmapper.checkdAcount(re);
+            if (at == null) {
+                s = StatusNum.SUCCES;
             }
         } catch (Exception e) {
-            s=StatusNum.ERROR;
+            s = StatusNum.ERROR;
             e.printStackTrace();
         }
 
         return s;
     }
+
     @Override
-    public String creatRole(NewRole re,HttpServletRequest request) {
-        String result =StatusNum.FAIL;
+    public String creatRole(NewRole re, HttpServletRequest request) {
+        String result = StatusNum.FAIL;
         try {
-            HttpSession session=request.getSession();
-            Integer acount = (Integer) session.getAttribute("acount");;//获取用户IDsession
-            NewRole r=new NewRole();
+            HttpSession session = request.getSession();
+            Integer acount = (Integer) session.getAttribute("acount");
+            ;//获取用户IDsession
+            NewRole r = new NewRole();
             r.setAccount(acount);
-           List<NewRole>  li = newrolemapper.selectAll(r);
-            if (li == null||li.size()<=3) {
+            List<NewRole> li = newrolemapper.selectAll(r);
+            if (li == null || li.size() <= 3) {
 //                气血=成长*等级（体质点+气血初值*0.8）
 //                精力=成长*等级（体质点+气血初值*0.8）
 //                攻击=(等级*成长*力量初值)/7+力量初值*成长*0.5+等级*成长*力量点*0.2
 //                速度=成长*（速度值加敏捷点）
                 NewRole n = new NewRole();
-                String zhiye=re.getZhiye();
-                String status="0";
+                String zhiye = re.getZhiye();
+                String status = "0";
                 n.setTotaljing1(200);
                 n.setTotalxue1(200);
                 n.setAccount(acount);
@@ -92,9 +96,9 @@ public class cocos2dLoginServiceImpl implements cocos2dLoginService {
                 n.setLevel(1);// 等级
                 n.setJin(88888);// 金
                 n.setYin(1000000);// 银
-                if(re.getRolename().length()>5){
+                if (re.getRolename().length() > 5) {
                     n.setRolename(re.getRolename().substring(0, 6));
-                }else{
+                } else {
                     n.setRolename(re.getRolename());
                 }
                 n.setZuobiao("新手村");
@@ -113,48 +117,47 @@ public class cocos2dLoginServiceImpl implements cocos2dLoginService {
                 int a = newrolemapper.insertSelective(n);
                 if (a > 0) {
                     insertRoleShuXing(zhiye, re.getId(), status);
-                    Login ln= (Login) Constants.loginMap.get(request.getHeader("key"));
-                    if(ln!=null){
-                        ln.setRoleId( n.getId());
+                    Login ln = (Login) Constants.loginMap.get(request.getHeader("key"));
+                    if (ln != null) {
+                        ln.setRoleId(n.getId());
                         ln.setRoleName(n.getRolename());
                     }
-                    result =StatusNum.SUCCES;
+                    result = StatusNum.SUCCES;
 
                 }
-            }else {
-               logger.info("该账号只能建立3个角色："+acount);
+            } else {
+                logger.info("该账号只能建立3个角色：" + acount);
             }
 
 
-
         } catch (Exception e) {
-            result=StatusNum.ERROR;
+            result = StatusNum.ERROR;
             logger.error("创建角色异常" + e.getMessage());
         }
         return result;
     }
 
-    public  void insertRoleShuXing(String zhiye, Integer roleid, String status) throws Exception {
-        switch (zhiye){
-            case "异人":{
+    public void insertRoleShuXing(String zhiye, Integer roleid, String status) throws Exception {
+        switch (zhiye) {
+            case "异人": {
 
                 insertShuXing("命中率", roleid, 75, status);
-                insertShuXing("暴击率",roleid,10,status);
-                insertShuXing("反击率",roleid,10,status);
-                insertShuXing("致命率",roleid,5,status);
-                insertShuXing("法术暴",roleid,5,status);
-                insertShuXing("反震率",roleid,10,status);
-                insertShuXing("躲避率",roleid,5,status);
-                insertShuXing("抗物理",roleid,0,status);
-                insertShuXing("抗玄击",roleid,0,status);
-                insertShuXing("抗围困",roleid,0,status);
-                insertShuXing("抗扰乱",roleid,0,status);
-                insertShuXing("抗封锁",roleid,0,status);
-                insertShuXing("抗风沙",roleid,10,status);
-                insertShuXing("抗妖火",roleid,10,status);
-                insertShuXing("抗落雷",roleid,10,status);
-                insertShuXing("抗毒术",roleid,10,status);
-               //异人加点方式
+                insertShuXing("暴击率", roleid, 10, status);
+                insertShuXing("反击率", roleid, 10, status);
+                insertShuXing("致命率", roleid, 5, status);
+                insertShuXing("法术暴", roleid, 5, status);
+                insertShuXing("反震率", roleid, 10, status);
+                insertShuXing("躲避率", roleid, 5, status);
+                insertShuXing("抗物理", roleid, 0, status);
+                insertShuXing("抗玄击", roleid, 0, status);
+                insertShuXing("抗围困", roleid, 0, status);
+                insertShuXing("抗扰乱", roleid, 0, status);
+                insertShuXing("抗封锁", roleid, 0, status);
+                insertShuXing("抗风沙", roleid, 10, status);
+                insertShuXing("抗妖火", roleid, 10, status);
+                insertShuXing("抗落雷", roleid, 10, status);
+                insertShuXing("抗毒术", roleid, 10, status);
+                //异人加点方式
                 /**
                  * 命中率75   暴击率10
                  * 反击率10    致命率5
@@ -167,7 +170,7 @@ public class cocos2dLoginServiceImpl implements cocos2dLoginService {
                  */
                 break;
             }
-            case "文人":{
+            case "文人": {
                 /**
                  * 命中率80   暴击率10
                  * 反击率10    致命率5
@@ -178,26 +181,26 @@ public class cocos2dLoginServiceImpl implements cocos2dLoginService {
                  * 抗风沙0     抗妖火0
                  * 抗落雷0     抗毒术0
                  */
-                insertShuXing("命中率",roleid,80,status);
-                insertShuXing("暴击率",roleid,10,status);
-                insertShuXing("反击率",roleid,10,status);
-                insertShuXing("致命率",roleid,5,status);
-                insertShuXing("法术暴",roleid,0,status);
-                insertShuXing("反震率",roleid,10,status);
-                insertShuXing("躲避率",roleid,5,status);
-                insertShuXing("抗物理",roleid,0,status);
-                insertShuXing("抗玄击",roleid,0,status);
-                insertShuXing("抗围困",roleid,10,status);
-                insertShuXing("抗扰乱",roleid,10,status);
-                insertShuXing("抗封锁",roleid,10,status);
-                insertShuXing("抗风沙",roleid,0,status);
-                insertShuXing("抗妖火",roleid,0,status);
-                insertShuXing("抗落雷",roleid,0,status);
-                insertShuXing("抗毒术",roleid,0,status);
+                insertShuXing("命中率", roleid, 80, status);
+                insertShuXing("暴击率", roleid, 10, status);
+                insertShuXing("反击率", roleid, 10, status);
+                insertShuXing("致命率", roleid, 5, status);
+                insertShuXing("法术暴", roleid, 0, status);
+                insertShuXing("反震率", roleid, 10, status);
+                insertShuXing("躲避率", roleid, 5, status);
+                insertShuXing("抗物理", roleid, 0, status);
+                insertShuXing("抗玄击", roleid, 0, status);
+                insertShuXing("抗围困", roleid, 10, status);
+                insertShuXing("抗扰乱", roleid, 10, status);
+                insertShuXing("抗封锁", roleid, 10, status);
+                insertShuXing("抗风沙", roleid, 0, status);
+                insertShuXing("抗妖火", roleid, 0, status);
+                insertShuXing("抗落雷", roleid, 0, status);
+                insertShuXing("抗毒术", roleid, 0, status);
 
                 break;
             }
-            case "武士":{
+            case "武士": {
                 /**
                  * 命中率85   暴击率15
                  * 反击率15    致命率5
@@ -208,57 +211,57 @@ public class cocos2dLoginServiceImpl implements cocos2dLoginService {
                  * 抗风沙0     抗妖火0
                  * 抗落雷0     抗毒术0
                  */
-                insertShuXing("命中率",roleid,85,status);
-                insertShuXing("暴击率",roleid,15,status);
-                insertShuXing("反击率",roleid,15,status);
-                insertShuXing("致命率",roleid,5,status);
-                insertShuXing("法术暴",roleid,0,status);
-                insertShuXing("反震率",roleid,15,status);
-                insertShuXing("躲避率",roleid,5,status);
-                insertShuXing("抗物理",roleid,20,status);
-                insertShuXing("抗玄击",roleid,5,status);
-                insertShuXing("抗围困",roleid,0,status);
-                insertShuXing("抗扰乱",roleid,0,status);
-                insertShuXing("抗封锁",roleid,0,status);
-                insertShuXing("抗风沙",roleid,0,status);
-                insertShuXing("抗妖火",roleid,0,status);
-                insertShuXing("抗落雷",roleid,0,status);
-                insertShuXing("抗毒术",roleid,0,status);
+                insertShuXing("命中率", roleid, 85, status);
+                insertShuXing("暴击率", roleid, 15, status);
+                insertShuXing("反击率", roleid, 15, status);
+                insertShuXing("致命率", roleid, 5, status);
+                insertShuXing("法术暴", roleid, 0, status);
+                insertShuXing("反震率", roleid, 15, status);
+                insertShuXing("躲避率", roleid, 5, status);
+                insertShuXing("抗物理", roleid, 20, status);
+                insertShuXing("抗玄击", roleid, 5, status);
+                insertShuXing("抗围困", roleid, 0, status);
+                insertShuXing("抗扰乱", roleid, 0, status);
+                insertShuXing("抗封锁", roleid, 0, status);
+                insertShuXing("抗风沙", roleid, 0, status);
+                insertShuXing("抗妖火", roleid, 0, status);
+                insertShuXing("抗落雷", roleid, 0, status);
+                insertShuXing("抗毒术", roleid, 0, status);
 
                 break;
             }
         }
     }
 
-    private  void insertShuXing(String kx,Integer roleid,Integer tx,String status) throws Exception{
-        RoleNewShuXing bx=new RoleNewShuXing();
+    private void insertShuXing(String kx, Integer roleid, Integer tx, String status) throws Exception {
+        RoleNewShuXing bx = new RoleNewShuXing();
         bx.setKangxing(kx);
         bx.setRoleid(roleid);
-        if(bx.getKangxingtotal()==null){
+        if (bx.getKangxingtotal() == null) {
             bx.setKangxingtotal(0);
         }
         bx.setStatus(status);
-        bx.setKangxingtotal(bx.getKangxingtotal()+tx);
+        bx.setKangxingtotal(bx.getKangxingtotal() + tx);
         rolenewshuxingmapper.insert(bx);
     }
 
 
     @Override
     public String creatAccount(Acount re) {
-        String result =StatusNum.FAIL;
+        String result = StatusNum.FAIL;
         try {
-            Acount at= new Acount();
+            Acount at = new Acount();
             at.setName(re.getName());
-            String rts=checkAcount(at);
-            if("true".equals(rts)){
+            String rts = checkAcount(at);
+            if ("true".equals(rts)) {
                 re.setLogintime(new Date());
                 int rt = acountmapper.insertSelective(re);
                 if (rt > 0) {
-                    result =StatusNum.SUCCES;
+                    result = StatusNum.SUCCES;
                 }
             }
         } catch (Exception e) {
-            result= StatusNum.ERROR;
+            result = StatusNum.ERROR;
             logger.error("注册账号失败" + e.getMessage());
         }
         return result;
@@ -266,22 +269,22 @@ public class cocos2dLoginServiceImpl implements cocos2dLoginService {
 
     /**
      * 跳转到主界面
+     *
      * @param re
-
      * @return
      */
     @Override
-    public Object selectRole(NewRole re,HttpServletRequest request)  {
+    public Object selectRole(NewRole re, HttpServletRequest request) {
         Object ot = null;
         try {
-           HttpSession session= request.getSession();
+            HttpSession session = request.getSession();
             List<NewRole> li = (List<NewRole>) session.getAttribute("roleList");
-            if(li.size()>0&&li!=null){
-                for(NewRole n:li){
-                    if(re.getId().equals(n.getId())){
+            if (li.size() > 0 && li != null) {
+                for (NewRole n : li) {
+                    if (re.getId().equals(n.getId())) {
                         //移除
-                        String key=request.getHeader("key");
-                        Login ln= (Login) Constants.loginMap.get(key);
+                        String key = request.getHeader("key");
+                        Login ln = (Login) Constants.loginMap.get(key);
 
 //
 //                        if(n.getId()==ln.getRoleId()){
@@ -294,22 +297,22 @@ public class cocos2dLoginServiceImpl implements cocos2dLoginService {
 //
 //                        }
 
-                        ln.setRoleId( n.getId());
+                        ln.setRoleId(n.getId());
                         ln.setRoleName(n.getRolename());
 //                        session.setAttribute("roleId", n.getId());
 //                        session.setAttribute("roleName",n.getRolename());
                         //Cocos2dHttpSessionListener.HTTPSESSIONMAP.put(n.getId().toString(),session);
-                        ot="success";
+                        ot = "success";
                         break;
-                    }else{
-                        ot="恶意攻击";
+                    } else {
+                        ot = "恶意攻击";
                     }
                 }
             }
 
         } catch (Exception e) {
             e.printStackTrace();
-            ot="服务器出问题了";
+            ot = "服务器出问题了";
         }
         return ot;
     }
@@ -318,21 +321,21 @@ public class cocos2dLoginServiceImpl implements cocos2dLoginService {
     public Object login(Acount re, HttpSession session) {
         Object obj = null;
         try {
-            Acount ct= acountmapper.login(re);
-            if (ct!=null) {
+            Acount ct = acountmapper.login(re);
+            if (ct != null) {
                 NewRole ne = new NewRole();
                 ne.setAccount(ct.getId());
                 List<NewRole> li = newrolemapper.selectAll(ne);
-                Login ln=new Login();
-                if(!StringUtil.isEmpty(re.getKey())){
+                Login ln = new Login();
+                if (!StringUtil.isEmpty(re.getKey())) {
                     //不允许重复登录
-                    if(Constants.loginMap.size()>0){
-                    if(li!=null&&li.size()>0){
-                        for(NewRole r:li){
-                            ln.setRoleId(r.getId());
-                                MapUtil.remove(Constants.loginMap,ln);
+                    if (Constants.loginMap.size() > 0) {
+                        if (li != null && li.size() > 0) {
+                            for (NewRole r : li) {
+                                ln.setRoleId(r.getId());
+                                MapUtil.remove(Constants.loginMap, ln);
                                 //通知该玩家被强制下线
-                                RoleFriendsMsg rf=new RoleFriendsMsg();
+                                RoleFriendsMsg rf = new RoleFriendsMsg();
                                 rf.setMessage("该户账号在别处登录，您被强制下线");
 
                                 systemnotification.sendSystemMsg(new Object[]{StatusNum.SYSTEMMSG204, rf}, r.getId().toString());
@@ -342,39 +345,40 @@ public class cocos2dLoginServiceImpl implements cocos2dLoginService {
 
                     ln.setAcount(ct);
                     ln.setLiRole(li);
-                    Constants.loginMap.put(re.getKey(),ln);
+                    Constants.loginMap.put(re.getKey(), ln);
 
 
                 }
 
                 //session.setAttribute("acount",ct.getId());//设置账号session
                 if (li.size() > 0 && li != null) {
-                    obj ="selectRole";
+                    obj = "selectRole";
                 } else {
                     obj = "creatRole";//跳转到创建角色
                 }
-            }else{
-                obj="nameError";
+            } else {
+                obj = "nameError";
             }
         } catch (Exception e) {
-            obj=StatusNum.ERROR;
-            logger.error("登录异常:"+e.getMessage(),e);
+            obj = StatusNum.ERROR;
+            logger.error("登录异常:" + e.getMessage(), e);
         }
         return obj;
     }
 
     /**
      * 加载选择角色界面
+     *
      * @param session
      * @return
      * @throws Exception
      */
     @Override
-    public List<NewRole> LoadSelectRole(HttpSession session){
-        List<NewRole> li=null;
+    public List<NewRole> LoadSelectRole(HttpSession session) {
+        List<NewRole> li = null;
         try {
-              // li = (List<NewRole>) session.getAttribute("roleList");
-               li = (List<NewRole>) session.getAttribute("roleList");
+            // li = (List<NewRole>) session.getAttribute("roleList");
+            li = (List<NewRole>) session.getAttribute("roleList");
         } catch (Exception e) {
             e.printStackTrace();
         }

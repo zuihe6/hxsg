@@ -95,6 +95,15 @@
             <artifactId>tomcat-embed-jasper</artifactId>
             <scope>provided</scope>
         </dependency>
+
+        <!-- 核心依赖（最新稳定版） -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.32</version> <!-- 2025年推荐版本 -->
+            <scope>provided</scope> <!-- 编译期依赖 -->
+        </dependency>
+
     </dependencies>
 
     <build>

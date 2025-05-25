@@ -1,16 +1,18 @@
 package hxsg.login.impl;
 
-import com.hxsg.CommonUtil.login.Constants;
-import com.hxsg.CommonUtil.util.MapUtil;
-import com.hxsg.Dao.RoleMapper;
-import com.hxsg.login.zhuceService;
-import com.hxsg.po.Role;
-import java.util.List;
-import java.util.Map;
+
+import com.hxsg.core.Dao.RoleMapper;
+import com.hxsg.core.po.Role;
+import hxsg.CommonUtil.login.Constants;
+import hxsg.CommonUtil.util.MapUtil;
+import hxsg.login.zhuceService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.WebSocketSession;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by dlf on 2015/12/31.
@@ -57,7 +59,7 @@ public class zhuceServiceImpl implements zhuceService {
     public Boolean appCreatrole(Role re,WebSocketSession session) throws Exception {
         Boolean result=false;
         try{
-            String id=MapUtil.getRoleId(mp,session);
+            String id= MapUtil.getRoleId(mp,session);
             Integer roleid = Integer.parseInt(id);//获取用户IDsession
             Role role = rolemapper.selectByPrimaryKey(roleid);
             if (roleid != null && role.getDengji() == null) {

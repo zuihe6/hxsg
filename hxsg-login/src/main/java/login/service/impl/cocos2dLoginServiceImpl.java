@@ -1,28 +1,26 @@
 package login.service.impl;
 
-import com.hxsg.CommonUtil.CommonException;
-import com.hxsg.CommonUtil.StringUtil;
-import com.hxsg.Dao.AcountMapper;
-import com.hxsg.Dao.IHxsgBaseDao;
-import com.hxsg.Dao.NewRoleMapper;
-import com.hxsg.Dao.RoleNewShuXingMapper;
-import com.hxsg.erroptype.LoginErrorType;
-import com.hxsg.login.service.Cocos2dLoginService;
-import com.hxsg.po.Acount;
-import com.hxsg.po.NewRole;
-import com.hxsg.po.RoleFriendsMsg;
-import com.hxsg.po.RoleNewShuXing;
-import com.hxsg.redisService.RedisDaoService;
-import com.hxsg.systemdao.SystemNotification;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+
+import com.hxsg.core.CommonUtil.CommonException;
+import com.hxsg.core.CommonUtil.StringUtil;
+import com.hxsg.core.Dao.AcountMapper;
+import com.hxsg.core.Dao.IHxsgBaseDao;
+import com.hxsg.core.Dao.NewRoleMapper;
+import com.hxsg.core.Dao.RoleNewShuXingMapper;
+import com.hxsg.core.erroptype.LoginErrorType;
+import com.hxsg.core.po.Acount;
+import com.hxsg.core.po.NewRole;
+import com.hxsg.core.po.RoleFriendsMsg;
+import com.hxsg.core.po.RoleNewShuXing;
+import com.hxsg.core.redisService.RedisDaoService;
+import com.hxsg.core.systemdao.SystemNotification;
+import login.service.Cocos2dLoginService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+
+import java.util.*;
 
 /**
  * Created by dlf on 2016/9/29.
@@ -41,9 +39,9 @@ public class cocos2dLoginServiceImpl implements Cocos2dLoginService {
     @Autowired
     RedisDaoService redisdaoservice;
     @Autowired
-    IHxsgBaseDao   ihxsgbasedao;
-    public String checkRole(NewRole re) throws CommonException{
-        String result =LoginErrorType.SUCCESS.getCode();
+    IHxsgBaseDao ihxsgbasedao;
+    public String checkRole(NewRole re) throws CommonException {
+        String result = LoginErrorType.SUCCESS.getCode();
         if(StringUtils.isEmpty(re.getRolename())){
             throw new CommonException( LoginErrorType.FAIL.getCode(),"角色名不能为空");
         }

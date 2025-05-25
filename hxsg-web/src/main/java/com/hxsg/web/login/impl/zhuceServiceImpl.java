@@ -1,10 +1,12 @@
 package com.hxsg.web.login.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.hxsg.core.Dao.RoleMapper;
+import com.hxsg.core.po.Role;
+import com.hxsg.core.tool.SequentialIdGenerator;
 import com.hxsg.web.CommonUtil.login.Constants;
 import com.hxsg.web.CommonUtil.util.MapUtil;
-import com.hxsg.core.Dao.RoleMapper;
 import com.hxsg.web.login.zhuceService;
-import com.hxsg.core.po.Role;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,35 +19,37 @@ import java.util.Map;
 /**
  * Created by dlf on 2015/12/31.
  */
-@Service("zhuceService")
-public class zhuceServiceImpl implements zhuceService {
+@Service
+public class zhuceServiceImpl extends ServiceImpl<RoleMapper, Role> implements zhuceService {
     private Logger logger = LoggerFactory.getLogger(getClass());
-    Map<String,Object> mp= Constants.SESSION_NAME;
+    Map<String, Object> mp = Constants.SESSION_NAME;
+
     @Autowired
     RoleMapper rolemapper;
+
     @Override
     public boolean getZhuCe(Role re) {
-        boolean result=false;
-        int a=rolemapper.insertSelective(re);
-        if(a>0){
-            result=true;
+        re.setId(SequentialIdGenerator.nextId());
+        boolean a = save(re);
+        if (a == true) {
+            return true;
         }
-        return result;
+        return false;
     }
 
     @Override
     public boolean checkRole(Role re) {
-        boolean result=true;
-        try{
-            List<Role> liRole=rolemapper.selectAll(re);
-            if(liRole.size()>0){
-                result=false;
+        boolean result = true;
+        try {
+            List<Role> liRole = rolemapper.selectAll(re);
+            if (liRole.size() > 0) {
+                result = false;
             }
-        }catch (Exception e){
-            result=false;
-           logger.error("service层--验证角色名或者账号名是否重复异常checkRole："+e.getMessage());
+        } catch (Exception e) {
+            result = false;
+            logger.error("service层--验证角色名或者账号名是否重复异常checkRole：" + e.getMessage());
         }
-        return  result;
+        return result;
     }
 
     @Override
@@ -55,10 +59,10 @@ public class zhuceServiceImpl implements zhuceService {
 
 
     @Override
-    public Boolean appCreatrole(Role re,WebSocketSession session) throws Exception {
-        Boolean result=false;
-        try{
-            String id= MapUtil.getRoleId(mp,session);
+    public Boolean appCreatrole(Role re, WebSocketSession session) throws Exception {
+        Boolean result = false;
+        try {
+            String id = MapUtil.getRoleId(mp, session);
             Integer roleid = Integer.parseInt(id);//获取用户IDsession
             Role role = rolemapper.selectByPrimaryKey(roleid);
             if (roleid != null && role.getDengji() == null) {
@@ -83,12 +87,12 @@ public class zhuceServiceImpl implements zhuceService {
                 rolelist.setFangyu(100);
                 int a = rolemapper.updateByPrimaryKeySelective(rolelist);
                 if (a > 0) {
-                    result=true;
+                    result = true;
                 }
             }
-        }catch (Exception e){
-            logger.error("创建角色异常"+e.getMessage());
+        } catch (Exception e) {
+            logger.error("创建角色异常" + e.getMessage());
         }
-       return result;
-        }
+        return result;
     }
+}

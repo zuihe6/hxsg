@@ -1,7 +1,10 @@
 package hxsg.CommonUtil.login;
 
-import com.hxsg.po.Acount;
-import com.hxsg.po.NewRole;
+
+
+import com.hxsg.core.po.Acount;
+import com.hxsg.core.po.NewRole;
+
 import java.util.List;
 
 /**

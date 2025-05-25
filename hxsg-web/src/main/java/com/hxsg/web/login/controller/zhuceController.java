@@ -145,8 +145,6 @@ public class zhuceController {
     @RequestMapping(value = "/appzc", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public String appzc(Role re, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-        System.out.println(re.getDengji());
         Role res = new Role();
         res.setName(re.getName());
         List<Role> r = rm.selectAll(res);

@@ -39,7 +39,8 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id, name, password, supperpass, zhiye, chenghao, jingyan, sjxiaolv, tilizhi, jin,
+        id
+        , name, password, supperpass, zhiye, chenghao, jingyan, sjxiaolv, tilizhi, jin,
         yin, tanwei, juzhudi, house, jiaopai, killsum, peiou, shuxing, fujiang, zuoji, qixue1,
         qixue2, jingli1, jingli2, gongji, sudu, fangyu, fuzhong1, touxiang, dengji, huilizhi,
         juesename, sex, status
@@ -47,11 +48,11 @@
 
     <select id="login" resultMap="BaseResultMap" parameterType="com.hxsg.core.po.Role">
         select
-            *
+        *
         from
-            role
+        role
         <where>
-                1=1
+            1=1
             <if test="role.name!=null and role.name!=''">
                 and name = #{role.name}
             </if>
@@ -70,9 +71,9 @@
 
     <select id="selectAll" resultMap="BaseResultMap" parameterType="com.hxsg.core.po.Role">
         select
-            <include refid="Base_Column_List"/>
+        <include refid="Base_Column_List"/>
         from
-            role
+        role
         <where>
             1=1
             <!-- 字符串类型：增加空字符串校验 -->
@@ -132,35 +133,35 @@
     </select>
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-        delete from role
+        delete
+        from role
         where id = #{id,jdbcType=INTEGER}
     </delete>
 
     <insert id="insert" parameterType="com.hxsg.core.po.Role">
         insert into role (id, name, password,
-        supperpass, zhiye, chenghao,
-        jingyan, sjxiaolv, tilizhi,
-        jin, yin, tanwei, juzhudi,
-        house, jiaopai, killsum,
-        peiou, shuxing, fujiang,
-        zuoji, qixue1, qixue2,
-        jingli1, jingli2, gongji,
-        sudu, fangyu, fuzhong1,
-        touxiang, dengji, huilizhi,
-        juesename, sex, status
-        )
+                          supperpass, zhiye, chenghao,
+                          jingyan, sjxiaolv, tilizhi,
+                          jin, yin, tanwei, juzhudi,
+                          house, jiaopai, killsum,
+                          peiou, shuxing, fujiang,
+                          zuoji, qixue1, qixue2,
+                          jingli1, jingli2, gongji,
+                          sudu, fangyu, fuzhong1,
+                          touxiang, dengji, huilizhi,
+                          juesename, sex, status)
         values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
-        #{supperpass,jdbcType=VARCHAR}, #{zhiye,jdbcType=VARCHAR}, #{chenghao,jdbcType=VARCHAR},
-        #{jingyan,jdbcType=INTEGER}, #{sjxiaolv,jdbcType=INTEGER}, #{tilizhi,jdbcType=INTEGER},
-        #{jin,jdbcType=INTEGER}, #{yin,jdbcType=INTEGER}, #{tanwei,jdbcType=VARCHAR}, #{juzhudi,jdbcType=VARCHAR},
-        #{house,jdbcType=VARCHAR}, #{jiaopai,jdbcType=VARCHAR}, #{killsum,jdbcType=INTEGER},
-        #{peiou,jdbcType=VARCHAR}, #{shuxing,jdbcType=INTEGER}, #{fujiang,jdbcType=VARCHAR},
-        #{zuoji,jdbcType=VARCHAR}, #{qixue1,jdbcType=INTEGER}, #{qixue2,jdbcType=INTEGER},
-        #{jingli1,jdbcType=INTEGER}, #{jingli2,jdbcType=INTEGER}, #{gongji,jdbcType=INTEGER},
-        #{sudu,jdbcType=INTEGER}, #{fangyu,jdbcType=INTEGER}, #{fuzhong1,jdbcType=INTEGER},
-        #{touxiang,jdbcType=VARCHAR}, #{dengji,jdbcType=INTEGER}, #{huilizhi,jdbcType=INTEGER},
-        #{juesename,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}
-        )
+                #{supperpass,jdbcType=VARCHAR}, #{zhiye,jdbcType=VARCHAR}, #{chenghao,jdbcType=VARCHAR},
+                #{jingyan,jdbcType=INTEGER}, #{sjxiaolv,jdbcType=INTEGER}, #{tilizhi,jdbcType=INTEGER},
+                #{jin,jdbcType=INTEGER}, #{yin,jdbcType=INTEGER}, #{tanwei,jdbcType=VARCHAR},
+                #{juzhudi,jdbcType=VARCHAR},
+                #{house,jdbcType=VARCHAR}, #{jiaopai,jdbcType=VARCHAR}, #{killsum,jdbcType=INTEGER},
+                #{peiou,jdbcType=VARCHAR}, #{shuxing,jdbcType=INTEGER}, #{fujiang,jdbcType=VARCHAR},
+                #{zuoji,jdbcType=VARCHAR}, #{qixue1,jdbcType=INTEGER}, #{qixue2,jdbcType=INTEGER},
+                #{jingli1,jdbcType=INTEGER}, #{jingli2,jdbcType=INTEGER}, #{gongji,jdbcType=INTEGER},
+                #{sudu,jdbcType=INTEGER}, #{fangyu,jdbcType=INTEGER}, #{fuzhong1,jdbcType=INTEGER},
+                #{touxiang,jdbcType=VARCHAR}, #{dengji,jdbcType=INTEGER}, #{huilizhi,jdbcType=INTEGER},
+                #{juesename,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER})
     </insert>
 
     <insert id="insertSelective" parameterType="com.hxsg.core.po.Role">
@@ -374,6 +375,7 @@
             </if>
         </trim>
     </insert>
+
     <update id="updateByPrimaryKeySelective" parameterType="com.hxsg.core.po.Role">
         update role
         <set>
@@ -481,39 +483,39 @@
     </update>
     <update id="updateByPrimaryKey" parameterType="com.hxsg.core.po.Role">
         update role
-        set name = #{name,jdbcType=VARCHAR},
-        password = #{password,jdbcType=VARCHAR},
-        supperpass = #{supperpass,jdbcType=VARCHAR},
-        zhiye = #{zhiye,jdbcType=VARCHAR},
-        chenghao = #{chenghao,jdbcType=VARCHAR},
-        jingyan = #{jingyan,jdbcType=INTEGER},
-        sjxiaolv = #{sjxiaolv,jdbcType=INTEGER},
-        tilizhi = #{tilizhi,jdbcType=INTEGER},
-        jin = #{jin,jdbcType=INTEGER},
-        yin = #{yin,jdbcType=INTEGER},
-        tanwei = #{tanwei,jdbcType=VARCHAR},
-        juzhudi = #{juzhudi,jdbcType=VARCHAR},
-        house = #{house,jdbcType=VARCHAR},
-        jiaopai = #{jiaopai,jdbcType=VARCHAR},
-        killsum = #{killsum,jdbcType=INTEGER},
-        peiou = #{peiou,jdbcType=VARCHAR},
-        shuxing = #{shuxing,jdbcType=INTEGER},
-        fujiang = #{fujiang,jdbcType=VARCHAR},
-        zuoji = #{zuoji,jdbcType=VARCHAR},
-        qixue1 = #{qixue1,jdbcType=INTEGER},
-        qixue2 = #{qixue2,jdbcType=INTEGER},
-        jingli1 = #{jingli1,jdbcType=INTEGER},
-        jingli2 = #{jingli2,jdbcType=INTEGER},
-        gongji = #{gongji,jdbcType=INTEGER},
-        sudu = #{sudu,jdbcType=INTEGER},
-        fangyu = #{fangyu,jdbcType=INTEGER},
-        fuzhong1 = #{fuzhong1,jdbcType=INTEGER},
-        touxiang = #{touxiang,jdbcType=VARCHAR},
-        dengji = #{dengji,jdbcType=INTEGER},
-        huilizhi = #{huilizhi,jdbcType=INTEGER},
-        juesename = #{juesename,jdbcType=VARCHAR},
-        sex = #{sex,jdbcType=VARCHAR},
-        status = #{status,jdbcType=INTEGER}
+        set name       = #{name,jdbcType=VARCHAR},
+            password   = #{password,jdbcType=VARCHAR},
+            supperpass = #{supperpass,jdbcType=VARCHAR},
+            zhiye      = #{zhiye,jdbcType=VARCHAR},
+            chenghao   = #{chenghao,jdbcType=VARCHAR},
+            jingyan    = #{jingyan,jdbcType=INTEGER},
+            sjxiaolv   = #{sjxiaolv,jdbcType=INTEGER},
+            tilizhi    = #{tilizhi,jdbcType=INTEGER},
+            jin        = #{jin,jdbcType=INTEGER},
+            yin        = #{yin,jdbcType=INTEGER},
+            tanwei     = #{tanwei,jdbcType=VARCHAR},
+            juzhudi    = #{juzhudi,jdbcType=VARCHAR},
+            house      = #{house,jdbcType=VARCHAR},
+            jiaopai    = #{jiaopai,jdbcType=VARCHAR},
+            killsum    = #{killsum,jdbcType=INTEGER},
+            peiou      = #{peiou,jdbcType=VARCHAR},
+            shuxing    = #{shuxing,jdbcType=INTEGER},
+            fujiang    = #{fujiang,jdbcType=VARCHAR},
+            zuoji      = #{zuoji,jdbcType=VARCHAR},
+            qixue1     = #{qixue1,jdbcType=INTEGER},
+            qixue2     = #{qixue2,jdbcType=INTEGER},
+            jingli1    = #{jingli1,jdbcType=INTEGER},
+            jingli2    = #{jingli2,jdbcType=INTEGER},
+            gongji     = #{gongji,jdbcType=INTEGER},
+            sudu       = #{sudu,jdbcType=INTEGER},
+            fangyu     = #{fangyu,jdbcType=INTEGER},
+            fuzhong1   = #{fuzhong1,jdbcType=INTEGER},
+            touxiang   = #{touxiang,jdbcType=VARCHAR},
+            dengji     = #{dengji,jdbcType=INTEGER},
+            huilizhi   = #{huilizhi,jdbcType=INTEGER},
+            juesename  = #{juesename,jdbcType=VARCHAR},
+            sex        = #{sex,jdbcType=VARCHAR},
+            status     = #{status,jdbcType=INTEGER}
         where id = #{id,jdbcType=INTEGER}
     </update>
 </mapper>

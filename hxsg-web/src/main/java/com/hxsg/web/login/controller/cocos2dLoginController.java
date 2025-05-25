@@ -28,128 +28,134 @@ import java.util.Map;
 @RequestMapping("cocos2dLogin")
 public class cocos2dLoginController {
     /********************cocos2d-js服务端代码***************************/
-    private Logger logger =Logger.getLogger(cocos2dLoginController.class);
+    private Logger logger = Logger.getLogger(cocos2dLoginController.class);
     @Autowired
     cocos2dLoginService cocos2dloginservice;
+
     //验证角色名是否重复
-    @RequestMapping(value = "/checkRole", method = { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = "/checkRole", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
-        public String checkRole(NewRole re,HttpServletRequest request,HttpServletResponse response){
-        String result=null;
-        try{
-            if(!StringUtils.isEmpty(re.getRolename())){
-                result= cocos2dloginservice.checkRole(re);
+    public String checkRole(NewRole re, HttpServletRequest request, HttpServletResponse response) {
+        String result = null;
+        try {
+            if (!StringUtils.isEmpty(re.getRolename())) {
+                result = cocos2dloginservice.checkRole(re);
                 com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
-            }else{
-                result="false";
-                com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result,request,response);
+            } else {
+                result = "false";
+                com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
             }
-        }catch (Exception e){
-            logger.error("控制层--验证角色名是否重复异常checkRole："+e.getMessage());
-            result=ErrorType.SERVERERROR;
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result,request,response);
+        } catch (Exception e) {
+            logger.error("控制层--验证角色名是否重复异常checkRole：" + e.getMessage());
+            result = ErrorType.SERVERERROR;
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
         }
         return null;
     }
+
     //验证账号名是否重复
-    @RequestMapping(value = "/checkAcount", method = { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = "/checkAcount", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
-    public String checkAcount(Acount re,HttpServletRequest request,HttpServletResponse response){
-        String result=null;
-        try{
-            if(!StringUtils.isEmpty(re.getName())){
-                result= cocos2dloginservice.checkAcount(re);
+    public String checkAcount(Acount re, HttpServletRequest request, HttpServletResponse response) {
+        String result = null;
+        try {
+            if (!StringUtils.isEmpty(re.getName())) {
+                result = cocos2dloginservice.checkAcount(re);
                 com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
-            }else{
-                result="false";
-                com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result,request,response);
+            } else {
+                result = "false";
+                com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
             }
-        }catch (Exception e){
-            logger.error("控制层--账号名是否重复异常checkAcount："+e.getMessage());
-            result=ErrorType.SERVERERROR;
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result,request,response);
+        } catch (Exception e) {
+            logger.error("控制层--账号名是否重复异常checkAcount：" + e.getMessage());
+            result = ErrorType.SERVERERROR;
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
         }
         return null;
     }
+
     //选择角色
     @RequestMapping(value = "/selectRole")
     @ResponseBody
-    public String selectRole(NewRole re,HttpSession session,HttpServletRequest request,HttpServletResponse response){
-        Object result=null;
-        try{
-            Map<String,Object> mp= Constants.loginMap;
-            String key=request.getHeader("key");
-            Login ln= (Login) mp.get(key);
-            session.setAttribute("roleList",ln.getLiRole());
-             result=cocos2dloginservice.selectRole(re,request);
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result,request,response);
-        }catch (Exception e){
-            logger.error("控制层--选择角色："+e.getMessage());
-            result=ErrorType.SERVERERROR;
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result,request,response);
+    public String selectRole(NewRole re, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        Object result = null;
+        try {
+            Map<String, Object> mp = Constants.loginMap;
+            String key = request.getHeader("key");
+            Login ln = (Login) mp.get(key);
+            session.setAttribute("roleList", ln.getLiRole());
+            result = cocos2dloginservice.selectRole(re, request);
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
+        } catch (Exception e) {
+            logger.error("控制层--选择角色：" + e.getMessage());
+            result = ErrorType.SERVERERROR;
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
         }
         return null;
     }
+
     //登录
     @RequestMapping(value = "/login")
     @ResponseBody
-    public String login(Acount re,HttpSession session,HttpServletRequest request,HttpServletResponse response){
-        Object result=null;
-        try{
+    public String login(Acount re, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        Object result = null;
+        try {
             re.setKey(request.getHeader("key"));
-            result=cocos2dloginservice.login(re,session);
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result,request,response);
-        }catch (Exception e){
-            logger.error("控制层--登录游戏login："+e.getMessage());
-            result=ErrorType.SERVERERROR;
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result,request,response);
+            result = cocos2dloginservice.login(re, session);
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
+        } catch (Exception e) {
+            logger.error("控制层--登录游戏login：" + e.getMessage());
+            result = ErrorType.SERVERERROR;
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
         }
         return null;
     }
 
     //创建角色
-    @RequestMapping(value = "/createRole", method = { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = "/createRole", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
-    public String createRole(NewRole re,HttpSession session,HttpServletRequest request,HttpServletResponse response){
-        String result=null;
-        try{
-            result=cocos2dloginservice.creatRole(re,request);
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result,request,response);
-        }catch (Exception e){
-            logger.error("控制层--创建角色createRole："+e.getMessage());
-            result=ErrorType.SERVERERROR;
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result,request,response);
+    public String createRole(NewRole re, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        String result = null;
+        try {
+            result = cocos2dloginservice.creatRole(re, request);
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
+        } catch (Exception e) {
+            logger.error("控制层--创建角色createRole：" + e.getMessage());
+            result = ErrorType.SERVERERROR;
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
         }
         return null;
     }
-    //注册
-    @RequestMapping(value = "/creatAccount", method = { RequestMethod.GET, RequestMethod.POST })
-    @ResponseBody
-    public String creatAccount(Acount re,HttpSession session,HttpServletRequest request,HttpServletResponse response){
-        String result=null;
-        try{
 
-            result=cocos2dloginservice.creatAccount(re);
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result,request,response);
-        }catch (Exception e){
-            logger.error("控制层--创建账号creatAccount："+e.getMessage());
-            result=ErrorType.SERVERERROR;
-            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result,request,response);
+    //注册
+    @RequestMapping(value = "/creatAccount", method = {RequestMethod.GET, RequestMethod.POST})
+    @ResponseBody
+    public String creatAccount(Acount re, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        String result = null;
+        try {
+
+            result = cocos2dloginservice.creatAccount(re);
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
+        } catch (Exception e) {
+            logger.error("控制层--创建账号creatAccount：" + e.getMessage());
+            result = ErrorType.SERVERERROR;
+            com.hxsg.web.CommonUtil.CommonUtilAjax.sendAjax(result, request, response);
         }
         return null;
     }
+
     //加载角色选择界面
-    @RequestMapping(value = "/loadSelectRole", method = { RequestMethod.GET, RequestMethod.POST })
+    @RequestMapping(value = "/loadSelectRole", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
-    public String LoadSelectRole(Acount re,HttpSession session,HttpServletRequest request,HttpServletResponse response){
-        try{
-            Map<String,Object> mp=Constants.loginMap;
-            String key=request.getHeader("key");
-            Login ln= (Login)mp.get(key);
-            List<NewRole> li=ln.getLiRole();
-            CommonUtilAjax.sendAjax(li,request,response);
-        }catch (Exception e){
-            logger.error("控制层--创建账号creatAccount："+e.getMessage());
+    public String LoadSelectRole(Acount re, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
+        try {
+            Map<String, Object> mp = Constants.loginMap;
+            String key = request.getHeader("key");
+            Login ln = (Login) mp.get(key);
+            List<NewRole> li = ln.getLiRole();
+            CommonUtilAjax.sendAjax(li, request, response);
+        } catch (Exception e) {
+            logger.error("控制层--创建账号creatAccount：" + e.getMessage());
         }
         return null;
     }

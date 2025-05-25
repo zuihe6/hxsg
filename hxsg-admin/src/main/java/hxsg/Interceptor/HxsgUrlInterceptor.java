@@ -1,18 +1,20 @@
 package hxsg.Interceptor;
 
-import com.hxsg.CommonUtil.StringUtil;
-import com.hxsg.CommonUtil.login.Constants;
-import com.hxsg.CommonUtil.login.Login;
-import com.hxsg.Dao.NewRoleMapper;
-import com.hxsg.po.NewRole;
-import com.hxsg.redis.RedisDaoService;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import com.hxsg.core.CommonUtil.StringUtil;
+import com.hxsg.core.Dao.NewRoleMapper;
+import com.hxsg.core.po.NewRole;
+import com.hxsg.core.redisService.RedisDaoService;
+import hxsg.CommonUtil.login.Constants;
+import hxsg.CommonUtil.login.Login;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by dlf on 2016/11/8.
@@ -22,7 +24,7 @@ public class HxsgUrlInterceptor implements HandlerInterceptor {
     @Autowired
     RedisDaoService redisdaoservice;
     @Autowired
-    NewRoleMapper  newrolemapper;
+    NewRoleMapper newrolemapper;
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
         boolean result=false;

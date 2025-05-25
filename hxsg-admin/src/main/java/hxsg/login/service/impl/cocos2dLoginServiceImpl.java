@@ -1,21 +1,30 @@
 package hxsg.login.service.impl;
 
-import com.hxsg.CommonUtil.StringUtil;
-import com.hxsg.CommonUtil.login.Constants;
-import com.hxsg.CommonUtil.login.Login;
-import com.hxsg.CommonUtil.util.ErrorType;
-import com.hxsg.CommonUtil.util.MapUtil;
-import com.hxsg.CommonUtil.util.StatusNum;
-import com.hxsg.login.service.cocos2dLoginService;
-import com.hxsg.redis.RedisDaoService;
-import com.hxsg.system.dao.SystemNotification;
-import java.util.Date;
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+import com.hxsg.core.CommonUtil.StringUtil;
+import com.hxsg.core.Dao.AcountMapper;
+import com.hxsg.core.Dao.IHxsgBaseDao;
+import com.hxsg.core.Dao.NewRoleMapper;
+import com.hxsg.core.Dao.RoleNewShuXingMapper;
+import com.hxsg.core.po.Acount;
+import com.hxsg.core.po.NewRole;
+import com.hxsg.core.po.RoleFriendsMsg;
+import com.hxsg.core.po.RoleNewShuXing;
+import com.hxsg.core.redisService.RedisDaoService;
+import com.hxsg.core.systemdao.SystemNotification;
+import hxsg.CommonUtil.login.Constants;
+import hxsg.CommonUtil.login.Login;
+import hxsg.CommonUtil.util.ErrorType;
+import hxsg.CommonUtil.util.MapUtil;
+import hxsg.CommonUtil.util.StatusNum;
+import hxsg.login.service.cocos2dLoginService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by dlf on 2016/9/29.
@@ -34,16 +43,16 @@ public class cocos2dLoginServiceImpl implements cocos2dLoginService {
     @Autowired
     RedisDaoService redisdaoservice;
     @Autowired
-    IHxsgBaseDao   ihxsgbasedao;
+    IHxsgBaseDao ihxsgbasedao;
     public String checkRole(NewRole re) {
-        String result =StatusNum.SUCCES;
+        String result = StatusNum.SUCCES;
         try {
             List<NewRole> liRole = newrolemapper.selectAll(re);
             if (liRole.size() > 0) {
                 result = StatusNum.FAIL;
             }
         } catch (Exception e) {
-            result =ErrorType.SERVERERROR;
+            result = ErrorType.SERVERERROR;
             logger.error("service层--验证角色名或者账号名是否重复异常checkRole：" + e.getMessage());
         }
         return result;

@@ -1,13 +1,14 @@
 package com.hxsg.web.login;
 
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.hxsg.core.po.Role;
 import org.springframework.web.socket.WebSocketSession;
 
 /**
  * Created by dlf on 2015/12/31.
  */
-public interface zhuceService {
+public interface zhuceService extends IService<Role> {
 
     public boolean getZhuCe(Role re);
 

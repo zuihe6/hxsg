@@ -1,9 +1,10 @@
 package login.service;
 
 
-import com.hxsg.CommonUtil.CommonException;
-import com.hxsg.po.Acount;
-import com.hxsg.po.NewRole;
+import com.hxsg.core.CommonUtil.CommonException;
+import com.hxsg.core.po.Acount;
+import com.hxsg.core.po.NewRole;
+
 import java.util.List;
 
 /**
@@ -12,16 +13,20 @@ import java.util.List;
 public interface Cocos2dLoginService {
     /**
      * cocos2d-js检查role中是否存在相同数据，验证注册时角色名是否相同，账号是否相同
+     *
      * @param re
      * @return true, fasle
      */
     public String checkRole(NewRole re) throws CommonException;
+
     /**
      * cocos2d-js检查账号是否重复
+     *
      * @param re
      * @return true, fasle
      */
     public String checkAcount(Acount re) throws CommonException;
+
     /**
      * cocos2d-js创建角色
      *
@@ -30,6 +35,7 @@ public interface Cocos2dLoginService {
      * @throws Exception
      */
     public String creatRole(NewRole re) throws CommonException;
+
     /**
      * cocos2d-js创建账号
      *
@@ -38,6 +44,7 @@ public interface Cocos2dLoginService {
      * @throws Exception
      */
     public String creatAccount(Acount re) throws CommonException;
+
     /**
      * cocos2d-js登录
      *
@@ -49,6 +56,7 @@ public interface Cocos2dLoginService {
 
     /**
      * 选择角色界面
+     *
      * @param re
      * @return
      * @throws Exception
@@ -57,6 +65,7 @@ public interface Cocos2dLoginService {
 
     /**
      * 加载选择角色界面
+     *
      * @return
      * @throws Exception
      */
@@ -64,9 +73,10 @@ public interface Cocos2dLoginService {
 
     /**
      * 校验游戏是否需要更新
+     *
      * @return
      * @throws CommonException
      */
-    public  String checkVersion() throws CommonException;
+    public String checkVersion() throws CommonException;
 
 }

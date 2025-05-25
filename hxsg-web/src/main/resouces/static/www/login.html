@@ -1,47 +1,85 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- 文档类型声明：HTML4.01过渡版 -->
 <html>
+<!-- HTML文档根元素 -->
 <head>
+    <!-- 文档头部开始 -->
     <base target="main">
+    <!-- 设置所有链接默认在名为main的框架中打开 -->
     <title>咕叽三国</title>
+    <!-- 页面标题显示为"咕叽三国" -->
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <!-- 强制双核浏览器优先使用webkit/IE兼容模式 -->
     <meta name="viewport"
           content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- 移动端视口设置：禁止缩放，固定比例 -->
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <!-- 页面关键词（SEO用） -->
     <meta http-equiv="description" content="this is my page">
+    <!-- 页面描述（SEO用） -->
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- 字符编码声明为UTF-8 -->
     <meta http-equiv="pragma" content="no-cache">
+    <!-- 禁止页面缓存（旧版HTTP1.0） -->
     <meta http-equiv="cache-control" content="no-cache">
+    <!-- 禁止页面缓存（HTTP1.1） -->
     <meta http-equiv="expires" content="0">
+    <!-- 缓存过期时间设为0（立即过期） -->
     <!-- saved from url=(0014)about:internet -->
+    <!-- IE特殊标记：允许本地运行网络保存的页面 -->
     <script type="text/javascript" src="jQuery/jquery-1.4.2.js"></script>
+    <!-- 引入jQuery 1.4.2库 -->
     <script type="text/javascript" src="js/httpurl.js"></script>
+    <!-- 引入自定义的httpurl.js 脚本 -->
     <link rel="stylesheet" type="text/css" href="css/common.css">
+    <!-- 引入公共样式表common.css  -->
 
     <script type="text/javascript">
+        // JavaScript脚本开始
         $(function () {
+            // 文档加载完成后执行的jQuery函数
             $("#login").click(function () {
+                // 绑定登录按钮点击事件
                 var name = $("#name").val();
+                // 获取用户名输入框的值
                 var pas = $("#password").val();
+                // 获取密码输入框的值
 
                 if (name == "" || pas == "") {
+                    // 检查用户名或密码是否为空
                     $("#xinxi").html("用户名或密码不能为空");
+                    // 显示错误提示信息
                 } else {
                     console.log("" + httpurl + "zhuce/applogin", "Aaaaaaaa")
+                    // 打印调试信息（拼接API地址）
                     $.ajax({
+                        // 发起AJAX请求
                         type: 'GET',
+                        // 使用GET方法
                         url: "" + httpurl + "zhuce/applogin",
+                        // 拼接完整的API地址
                         dataType: 'jsonp',
+                        // 指定返回数据类型为JSONP（跨域）
                         data: {name: name, password: pas},
+                        // 发送的用户名和密码数据
                         jsonp: "jsonpCallback",
+                        // JSONP回调函数名称
                         success: function (msg) {
+                            // 请求成功回调函数
                             if (msg.msg == "error") {
+                                // 如果返回错误状态
                                 $("#xinxi").text("账号或者用户名错误，请重新输入！");
+                                // 显示登录失败提示
                             }
                             if (msg.msg == " 直接登录") {
+                                // 如果返回直接登录状态
                                 window.top.location.href = "index/index.html";
+                                // 跳转到首页
                             }
                             if (msg.msg == " 创建角色") {
+                                // 如果返回创建角色状态
                                 window.top.location.href = "login/createrole.html";
+                                // 跳转到角色创建页
                             }
                         }
                     });
@@ -49,33 +87,50 @@
             });
 
             $("#createrole").click(function () {
+                // 绑定注册按钮点击事件
                 window.top.location.href = "login/zhuce.html";
+                // 跳转到注册页面
             });
         });
     </script>
 
     <style type="text/css">
+        /* 内联CSS样式 */
         .index {
+            /* 定义index类样式 */
             background: url("image/zcback.png");
+            /* 设置背景图片 */
             background-size: 100% 100%;
+            /* 背景图片拉伸至全屏 */
         }
     </style>
 </head>
+<!-- 文档头部结束 -->
 
 <body class="index">
+<!-- 页面主体，应用index样式 -->
 <div style="width:100%;height:100%;background:url(image/th11.gif);">
+    <!-- 外层div：设置全屏背景图th11.gif  -->
     <div style="width:100%;height:100%;background:url(image/th.jpg);">
+        <!-- 中层div：设置全屏背景图th.jpg  -->
         <div style="border:1px solid #ff0000; height:300px;width:300px;margin:0px auto;margin-top:100px;">
+            <!-- 登录框div：红色边框，居中，顶部间距100px -->
             <p style="color:#ffffff;">账 号：<input id="name" type="text" name="name" placeHolder="请输入您的账号"/></p>
+            <!-- 用户名输入框（白色文字） -->
             <p style="color:#ffffff;">密 码：<input id="password" type="password" name="password"
                                                    placeHolder="请输入您的密码"/></p>
+            <!-- 密码输入框（白色文字） -->
             <p style="color:#FFF39C" id="xinxi"></p>
+            <!-- 消息提示区域（浅黄色文字） -->
             <input id="createrole" type="button" value="注册游戏"
                    style="width:100px;font-size:20px;background:#ff2821;color:#7fffc5;position:relative;top:50px;left:0px;"/>
+            <!-- 注册按钮（红色背景） -->
             <input id="login" type="submit" value="进入游戏"
                    style="width:100px;font-size:20px;background:#7b66ff;color:#7fffc5;position:relative;top:50px;left:100px;"/>
+            <!-- 登录按钮（紫色背景） -->
         </div>
     </div>
 </div>
 </body>
 </html>
+<!-- 文档结束 -->

@@ -1,11 +1,12 @@
 package hxsg.login.service;
 
 
-import com.hxsg.po.Acount;
-import com.hxsg.po.NewRole;
-import java.util.List;
+import com.hxsg.core.po.Acount;
+import com.hxsg.core.po.NewRole;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Created by dlf on 2015/12/31.

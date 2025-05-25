@@ -1,7 +1,8 @@
 package hxsg.login;
 
 
-import com.hxsg.po.Role;
+
+import com.hxsg.core.po.Role;
 import org.springframework.web.socket.WebSocketSession;
 
 /**

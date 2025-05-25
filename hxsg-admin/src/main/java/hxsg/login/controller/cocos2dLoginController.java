@@ -1,17 +1,13 @@
 package hxsg.login.controller;
 
-import com.hxsg.CommonUtil.CommonUtilAjax;
-import com.hxsg.CommonUtil.login.Constants;
-import com.hxsg.CommonUtil.login.Login;
-import com.hxsg.CommonUtil.util.ErrorType;
-import com.hxsg.login.service.cocos2dLoginService;
-import com.hxsg.po.Acount;
-import com.hxsg.po.NewRole;
-import java.util.List;
-import java.util.Map;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import com.hxsg.core.CommonUtil.CommonUtilAjax;
+import com.hxsg.core.po.Acount;
+import com.hxsg.core.po.NewRole;
+import hxsg.CommonUtil.login.Constants;
+import hxsg.CommonUtil.login.Login;
+import hxsg.CommonUtil.util.ErrorType;
+import hxsg.login.service.cocos2dLoginService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +15,12 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by dlf on 2016/9/29.
@@ -34,7 +36,7 @@ public class cocos2dLoginController {
     //验证角色名是否重复
     @RequestMapping(value = "/checkRole", method = { RequestMethod.GET, RequestMethod.POST })
     @ResponseBody
-        public String checkRole(NewRole re,HttpServletRequest request,HttpServletResponse response){
+        public String checkRole(NewRole re, HttpServletRequest request, HttpServletResponse response){
         String result=null;
         try{
             if(!StringUtils.isEmpty(re.getRolename())){
@@ -46,7 +48,7 @@ public class cocos2dLoginController {
             }
         }catch (Exception e){
             logger.error("控制层--验证角色名是否重复异常checkRole："+e.getMessage());
-            result=ErrorType.SERVERERROR;
+            result= ErrorType.SERVERERROR;
             CommonUtilAjax.sendAjax(result,request,response);
         }
         return null;
@@ -54,7 +56,7 @@ public class cocos2dLoginController {
     //验证账号名是否重复
     @RequestMapping(value = "/checkAcount", method = { RequestMethod.GET, RequestMethod.POST })
     @ResponseBody
-    public String checkAcount(Acount re,HttpServletRequest request,HttpServletResponse response){
+    public String checkAcount(Acount re, HttpServletRequest request, HttpServletResponse response){
         String result=null;
         try{
             if(!StringUtils.isEmpty(re.getName())){
@@ -77,7 +79,7 @@ public class cocos2dLoginController {
     public String selectRole(NewRole re,HttpSession session,HttpServletRequest request,HttpServletResponse response){
         Object result=null;
         try{
-            Map<String,Object> mp=Constants.loginMap;
+            Map<String,Object> mp= Constants.loginMap;
             String key=request.getHeader("key");
             Login ln= (Login) mp.get(key);
             session.setAttribute("roleList",ln.getLiRole());
